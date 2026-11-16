@@ -24,8 +24,10 @@ set past the right margin of the text block, and bitmap (Type 3) fonts.
   the figures and the class files. The folder is compiled on its own,
   without the repository, and the text of its PDFs must equal that of the normal
   build. Two archives are written next to it: gradinv-arxiv.tar.gz (manuscript
-  sources, with the supplement as the ancillary file anc/supplement.pdf) and
-  gradinv-source.zip (manuscript and supplement sources).
+  sources, with the supplement as the ancillary file anc/supplement.pdf),
+  gradinv-source.zip (manuscript and supplement sources) and gradinv-em.zip (the
+  manuscript sources for Editorial Manager: one flat folder, figures named Figure_1,
+  Figure_2, ... in order of appearance).
 - The margin check reads the PDF (pdftotext -bbox) because TeX does not report a
   display that is too wide inside gathered/pmatrix. Text block: \\textwidth (written to
   the log by macros.tex) from the most frequent left edge; the title page (class
@@ -46,7 +48,7 @@ ROOT = PAPER.parent
 BUILD = PAPER / "build"
 MASTERS = ("main", "supplement")
 CLASS_FILES = ("cas-sc.cls", "cas-common.sty")
-CLASS_DIRS = ("thumbnails",)       # icons the title page sets beside the e-mail address
+CLASS_DIRS = ("thumbnails",)       # icons of the class; unused with the nologo key
 SOURCE_SUFFIXES = (".tex", ".cls", ".sty", ".pdf", ".jpeg", ".jpg", ".png")
 
 
@@ -240,12 +242,17 @@ def make_bundle(cls_dir):
             "\\def\\gradinvfinal{1}% submission version: no drafting boxes\n")
     for master in MASTERS:
         text = flatten(PAPER / f"{master}.tex", (BUILD / f"{master}.bbl").read_text())
-        (BUNDLE / f"{master}.tex").write_text(head + text)
-        for fig in graphics(text):
-            if fig.is_file():
-                shutil.copy(fig, BUNDLE)
-            else:
+        for k, fig in enumerate(graphics(text), start=1):
+            if not fig.is_file():
                 bad.append(f"{master}: figure {fig.name} not found")
+                continue
+            if master == "main":                # the journal asks for Figure_1, Figure_2, ...
+                text = re.sub(r"(\\includegraphics(?:\[[^\]]*\])?\{)" + re.escape(fig.stem)
+                              + r"(?:\.pdf)?\}", lambda m, k=k: m.group(1) + f"Figure_{k}}}", text)
+                shutil.copy(fig, BUNDLE / f"Figure_{k}{fig.suffix}")
+            else:
+                shutil.copy(fig, BUNDLE)
+        (BUNDLE / f"{master}.tex").write_text(head + text)
         for box in pending_boxes(text):
             print(f"    note, {master}: drafting box left (hidden in the PDF): {box[-70:]}")
     env = dict(os.environ, TEXINPUTS="", BIBINPUTS="", BSTINPUTS="")
@@ -299,7 +306,14 @@ def make_bundle(cls_dir):
     with zipfile.ZipFile(BUILD / "gradinv-source.zip", "w", zipfile.ZIP_DEFLATED) as z:
         for n in sorted(keep):
             z.write(BUNDLE / n, n)
-    print("bundle: paper/build/gradinv-arxiv.tar.gz, paper/build/gradinv-source.zip")
+    if any("/" in n for n in used["main"]):
+        bad.append("main: the bundle has subfolders, which Editorial Manager cannot process")
+        return bad
+    with zipfile.ZipFile(BUILD / "gradinv-em.zip", "w", zipfile.ZIP_DEFLATED) as z:
+        for n in used["main"]:
+            z.write(BUNDLE / n, n)
+    print("bundle: paper/build/gradinv-arxiv.tar.gz, paper/build/gradinv-source.zip, "
+          "paper/build/gradinv-em.zip")
     return bad
 
 

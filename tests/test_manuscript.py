@@ -244,3 +244,12 @@ def test_flattened_sources_stand_alone():
         assert figures and all(f.is_file() for f in figures), (master, figures)
     # a file read by \input ends with \relax\space (LaTeX's file hooks and the end of line)
     assert flat.count("\\relax\\space% end of ") >= len(section_files("supplement.tex"))
+
+
+def test_title_page_needs_no_class_subfolder():
+    """Editorial Manager cannot process subfolders; with the nologo key the class prints the
+    e-mail address as text instead of reading thumbnails/cas-email.jpeg."""
+    for master in ("main", "supplement"):
+        code = strip_comments(_text(PAPER / f"{master}.tex"))
+        assert "\\keys_set:nn { stm / mktitle } { nologo }" in code, master
+        assert "\\maketitle[" not in code, master   # cas-sc's \maketitle takes no option
