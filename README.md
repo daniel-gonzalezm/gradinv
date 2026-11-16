@@ -1,5 +1,7 @@
 # gradinv
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24267836.svg)](https://doi.org/10.5281/zenodo.24267836)
+
 Code and data for the article *Algebra, closed-form compliance and orientation
 averages of cubic and hexagonal strain-gradient elasticity tensors*
 (D. González-Monsalve).
@@ -115,4 +117,7 @@ under the Creative Commons Attribution 4.0 International licence (CC BY 4.0).
 
 ## Citation
 
-Please cite the article. `CITATION.cff` gives the citation of this software.
+Please cite the article. The version of the code and data used in the article is
+archived at Zenodo: D. González-Monsalve, *gradinv*, version 1.0.0, Zenodo, 2026,
+https://doi.org/10.5281/zenodo.24267836. `CITATION.cff` gives the citation of this
+software.

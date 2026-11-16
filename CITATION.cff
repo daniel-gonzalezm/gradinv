@@ -7,6 +7,11 @@ authors:
     orcid: "https://orcid.org/0000-0002-3892-4722"
     affiliation: "Department of Mechanical Engineering, Faculty of Engineering, Universidad de Concepción, Concepción, Chile"
 version: "1.0.0"
+date-released: "2026-11-16"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24267836"
+    description: "Version 1.0.0 archived at Zenodo"
 abstract: >-
   Code and data for the article "Algebra, closed-form compliance and orientation
   averages of cubic and hexagonal strain-gradient elasticity tensors". The Python
