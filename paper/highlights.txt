@@ -1,0 +1,5 @@
+Coordinate-free bases of the cubic and hexagonal strain-gradient tensor algebras
+Closed-form gradient compliance with block-wise conditions of positive definiteness
+Inverses, averages and concentration tensors reduce to blocks of size at most four
+The single hexagonal modulus beyond transverse isotropy is identified intrinsically
+A published sphere average of the sixth-order Eshelby tensor is corrected

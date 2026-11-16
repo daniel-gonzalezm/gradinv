@@ -1,0 +1,102 @@
+\section{The averaged Eshelby tensor of the sphere}\label{app:eshelby}
+
+We use the kinematics and constants of Ma et al.~\cite{Ma2018}: form~I with
+$\tilde\kappa_{ijk}=u_{k,ij}$, the isotropic gradient tensor $\tD$ of their eq.~(2.6), with
+constants $a_1,\dots,a_5$, and the lengths $l_1$, $l_2$ of their eq.~(2.8). Let a uniform
+eigen-gradient $\tilde{\bm\kappa}^*$ act in a sphere $\Omega$ of radius $R$, with indicator
+$\chi$. The medium has the acoustic tensor
+\begin{equation}
+K(\bm\xi)=\xi^2\big[(\lambda+2\mu)(1+l_1^2\xi^2)\,\bm n\ot\bm n
++\mu(1+l_2^2\xi^2)(\kron-\bm n\ot\bm n)\big],\qquad \bm n=\bm\xi/\xi,
+\label{eq:esh-acoustic}
+\end{equation}
+and, solving in Fourier space, the average of $\tilde{\bm\kappa}$ over $\Omega$ is
+$\tSav\tilde{\bm\kappa}^*$, with
+\begin{equation}
+\bar S_{rts,lmn}=\frac{1}{|\Omega|\,(2\pi)^3}\int|\hat\chi(\bm\xi)|^2\,
+\xi_r\xi_t\,(K^{-1})_{sk}\,\xi_i\xi_j\,D_{ijk,lmn}\,\dd^3\xi,
+\label{eq:esh-fourier}
+\end{equation}
+the indices $(r,t)$ and $(i,j)$ being those of the derivatives. Since
+$\tilde\kappa$ is symmetric in its derivative indices, $\tSav$ is compared with other
+expressions after symmetrisation in $(r,t)$ and in $(l,m)$. The integral separates into a
+radial and an angular part:
+\begin{equation}
+\tSav=\mathbb P\,\tD,\qquad
+P_{rts,ijk}=\frac{F(l_1)}{\lambda+2\mu}\,\avg{n_rn_tn_sn_in_jn_k}
++\frac{F(l_2)}{\mu}\big(\avg{n_rn_tn_in_j}\delta_{sk}-\avg{n_rn_tn_sn_in_jn_k}\big),
+\label{eq:esh-polarization}
+\end{equation}
+with $\avg{\cdot}$ the average over the unit sphere and
+\begin{equation}
+F(l)=\frac{3}{2R^3l}\big[R^2(1+\beta)+2lR\beta-l^2(1-\beta)\big],\qquad \beta=e^{-2R/l}.
+\label{eq:esh-radial}
+\end{equation}
+$\mathbb P$ is symmetric, a gradient analogue of Hill's polarisation tensor, and depends on the
+medium only through $\lambda$, $\mu$, $l_1$ and $l_2$; $\tSav$ is not symmetric. As
+$R/l_1,R/l_2\to\infty$, $l^2F\to0$ and $\tSav\to0$; as $R/l_1,R/l_2\to0$, $l^2F\to1$, the
+integrand tends to a projection of rank three for every $\bm\xi$, and $\tr\tSav\to3$. For the
+Helmholtz medium $\tD=\ell^2\tC\ot\kron$, that is, $a_1=\tfrac12\lambda\ell^2$, $a_2=a_3=0$,
+$a_4=a_5=\tfrac12\mu\ell^2$~\cite[eq.~(4.3)]{Ma2018} and $l_1=l_2=\ell$, one has
+$\ell^2F(\ell)=-3\Phi(R/\ell)$ with $\Phi$ of~\cite[eq.~(21)]{Solyaev2023}, and the blocks
+of $\tSav$ in the copies of section~\ref{sec:isotropic} are
+\begin{equation}
+\begin{gathered}
+m_3=-\frac{4(4\lambda+11\mu)}{35(\lambda+2\mu)}\,\Phi,\qquad m_2=-\frac{\Phi}{5},\qquad
+M=-\Phi\begin{pmatrix}\dfrac{19\lambda+26\mu}{15(\lambda+2\mu)}&
+-\dfrac{2\sqrt5\,(\lambda-\mu)}{15(\lambda+2\mu)}\\[1.5ex]
+\dfrac{4\sqrt5}{15}&\dfrac13\end{pmatrix},
+\end{gathered}\label{eq:esh-helmholtz}
+\end{equation}
+which define $\hat{\tS}=\tSav/\Phi$ of section~\ref{sec:application}. The fourth-order
+average, $s_1$ and $s_2$ of Ma et al.~\cite[eq.~(3.19)]{Ma2018}, follows in the same way and
+agrees with theirs.
+
+Their sixth-order average~\cite[eq.~(3.18)]{Ma2018}, written as five isotropic tensors with
+coefficients $\hat n_1,\dots,\hat n_5$, is not $\tSav$. An isotropic map of $\Vsg$ without major
+symmetry has six independent coefficients ($\Alg{\clsiso}$ has dimension six), and the term
+$\hat n_2$ lumps two classes that are transposes of each other,
+$\delta_{lm}(\delta_{nr}\delta_{ts}+\delta_{nt}\delta_{rs})$ and
+$\delta_{rt}(\delta_{sl}\delta_{mn}+\delta_{sm}\delta_{nl})$, whose coefficients in $\tSav$
+differ. Of the five coefficients only $\hat n_1$ is that of $\tSav$; $\hat n_4$ and $\hat n_5$
+are twice and four times those of $\tSav$. For a general isotropic medium, with $c=\lambda+2\mu$, $F_1=F(l_1)$ and
+$F_2=F(l_2)$, the exact average is
+$\tSav=\bar n_1\mathbb K_1+\bar n_{2a}\mathbb K_{2a}+\bar n_{2b}\mathbb K_{2b}+\bar n_3\mathbb K_3
++\bar n_4\mathbb K_4+\bar n_5\mathbb K_5$, in the classes of their eq.~(3.18) with the term of $\hat n_2$ split in two (defined below), with
+\begin{equation}
+\begin{aligned}
+\bar n_1&=\frac{(7a_2+14a_3+2a_4+2a_5)F_1}{105c}+\frac{2(28a_3+6a_4-a_5)F_2}{105\mu},\\
+\bar n_{2a}&=\frac{(14a_1+7a_2+4a_4+4a_5)F_1}{210c}+\frac{(14a_2-2a_4+5a_5)F_2}{105\mu},\\
+\bar n_{2b}&=\frac{(7a_2+14a_3+2a_4+2a_5)F_1}{105c}-\frac{2(7a_3+a_4+a_5)F_2}{105\mu},\\
+\bar n_3&=\frac{2(a_4+a_5)F_1}{105c}-\frac{(2a_4-5a_5)F_2}{105\mu},\qquad
+\bar n_4=\frac{2(a_4+a_5)F_1}{105c}+\frac{2(6a_4-a_5)F_2}{105\mu},\\
+\bar n_5&=\frac{(14a_1+7a_2+4a_4+4a_5)F_1}{210c}-\frac{(7a_2+4a_4+4a_5)F_2}{210\mu},
+\end{aligned}\label{eq:esh-six-general}
+\end{equation}
+the exact counterparts of $\hat n_1,\dots,\hat n_5$ of~\cite[eq.~(3.18)]{Ma2018}. For the
+Helmholtz medium, $l_1=l_2=\ell$ and $\ell^2F=-3\Phi$, so that
+\begin{equation}
+\begin{aligned}
+\tSav={}&-\frac{(5\lambda+12\mu)\Phi}{35c}\big(\mathbb K_1+\mathbb K_4\big)
+-\frac{(\lambda+\mu)\Phi}{7c}\,\mathbb K_{2a}+\frac{2(\lambda+\mu)\Phi}{35c}\,\mathbb K_{2b}\\
+&-\frac{(3\lambda+10\mu)\Phi}{70c}\,\mathbb K_3-\frac{(3\lambda-4\mu)\Phi}{70c}\,\mathbb K_5,
+\end{aligned}
+\end{equation}
+where $\mathbb K_1$, $\mathbb K_3$, $\mathbb K_4$ and $\mathbb K_5$ are the tensors multiplying
+$\hat n_1$, $\hat n_3$, $\hat n_4$ and $\hat n_5$ in~\cite[eq.~(3.18)]{Ma2018}, and
+$\mathbb K_{2a}=\delta_{rt}(\delta_{sl}\delta_{mn}+\delta_{sm}\delta_{nl})$ and
+$\mathbb K_{2b}=\delta_{lm}(\delta_{nr}\delta_{ts}+\delta_{nt}\delta_{rs})$ are the two halves
+of the tensor multiplying $\hat n_2$. Their eq.~(3.18) needs $\mathbb K_{2a}$ and $\mathbb K_{2b}$
+to share a coefficient; for the Helmholtz medium the coefficient of $\mathbb K_{2b}$ is $-2/5$
+times that of $\mathbb K_{2a}$.
+
+The tensor of their eq.~(3.18) times $\tD^{-1}$ is not symmetric, and
+for the Helmholtz medium its trace tends to $11(31\lambda+56\mu)/(35(\lambda+2\mu))$ instead of
+three as $R/\ell\to0$. Their own derivation is right up to the last step: the tensor of their
+eq.~(3.12), averaged over the sphere with their eq.~(B.12), gives $\tSav$ exactly, and the error
+enters when that average is collected into the five terms of their eq.~(3.18). A real-space
+route from their Green function confirms $\tSav$ (supplementary material, section~S7). The
+tensor of Solyaev~\cite[eq.~(21)]{Solyaev2023} takes its coefficients from eq.~(3.18) with
+eq.~(4.3); it agrees with $\tSav$ on two of the six classes, and its trace tends to
+$2(74\lambda+125\mu)/(35(\lambda+2\mu))$. His fourth-order average~\cite[eq.~(20)]{Solyaev2023}
+has half the deviatoric term of theirs. Section~\ref{sec:application} uses $\tSav$.

@@ -1,0 +1,143 @@
+\section{Closed-form gradient compliance}\label{sec:compliance}
+
+\subsection{Inverse and conditions}\label{sec:compliance-inverse}
+
+By~\eqref{eq:block-rules}, the compliances of the cubic tensor~\eqref{eq:cub-tensor} and
+of the hexagonal tensor~\eqref{eq:hex-tensor} are
+\begin{equation}
+\begin{aligned}
+\tD^{-1}&=\sum_{a,b}(M^{-1})_{ab}\tU{T_1}{a}{b}+\sum_{a,b}(N^{-1})_{ab}\tU{T_2}{a}{b}
++\frac{\tP{E}}{m_E}+\frac{\tP{A_2}}{m_A},\\
+\tD^{-1}&=\sum_{a,b}(\hexA^{-1})_{ab}\tU{A_2}{a}{b}+\sum_{a,b}(\hexF^{-1})_{ab}\tU{E_1}{a}{b}
++\sum_{a,b}(\hexG^{-1})_{ab}\tU{E_2}{a}{b}
++\frac{\tP{A_1}}{m_{A_1}}+\frac{\tP{B_1}}{m_{B_1}}+\frac{\tP{B_2}}{m_{B_2}}.
+\end{aligned}\label{eq:compliance}
+\end{equation}
+The blocks have size at most three (cubic) and four (hexagonal), so their inverses are
+explicit by cofactors, and the units are explicit in components (supplementary
+material, section~S1); the same formulas invert the non-symmetric elements of the
+algebras, whose blocks are not symmetric. A cubic tensor is invertible if and only if
+$\det M\,\det N\,m_Em_A\ne0$, and positive definite if and only if, by Sylvester's
+criterion on the blocks,
+\begin{equation}
+M_{hh}>0,\quad M_{hh}M_{ss}-M_{hs}^2>0,\quad \det M>0,\quad N_{33}>0,\quad \det N>0,
+\quad m_E>0,\quad m_A>0.\label{eq:cub-pd}
+\end{equation}
+These are seven conditions, as many as Lazar et al.\ obtain from Sylvester's criterion
+on the $5\times5$ and $3\times3$ diagonal blocks of their matrix~\cite[appendix~A,
+eqs.~(A.7)]{Lazar2022}, but each involves a single irreducible block and has degree at
+most three in the moduli. A hexagonal tensor is invertible if and only if $\det\hexA\,\det\hexF\,\det\hexG\,
+m_{A_1}m_{B_1}m_{B_2}\ne0$ and positive definite if and only if $\hexA$, $\hexF$ and
+$\hexG$ are positive definite and $m_{A_1}$, $m_{B_1}$, $m_{B_2}$ are positive; in the
+components of Auffray et al., \eqref{eq:hex-auffray} turns these into the positive
+definiteness of $A^{(11)}$, $A^{(11)}+\eta_{\mathrm A}A_c$, $H^{(6)}+f(J^{(4)})$ and $J^{(4)}$.
+By~\eqref{eq:hex-extra},
+\begin{equation}
+\frac{\tP{B_1}}{m_{B_1}}+\frac{\tP{B_2}}{m_{B_2}}
+=\frac12\Big(\frac1{m_{B_1}}+\frac1{m_{B_2}}\Big)(\tP{B_1}+\tP{B_2})
++\frac18\Big(\frac1{m_{B_1}}-\frac1{m_{B_2}}\Big)\tHsix,\label{eq:hex-extra-compliance}
+\end{equation}
+so the extra modulus of $\tD^{-1}$ is $-\Dhex/(m_{B_1}m_{B_2})$: the compliance of a
+transversely isotropic tensor is transversely isotropic, and that of an isotropic tensor
+is the isotropic inverse~\eqref{eq:iso-tensor}.
+
+\subsection{Back to the constants of Lazar et al.}\label{sec:compliance-lazar}
+
+The map~\eqref{eq:cub-lazar} is inverted in closed form. With
+$u=M_{hh}-m_A$, $x=N_{33}-m_A$, $y=N_{22}-m_E$ and
+$X=M_{ss}-\sqrt6M_{hs}+\tfrac32M_{hh}-\tfrac52N_{33}$, $Y=M_{rr}-N_{22}$,
+$Z=M_{sr}-\tfrac{\sqrt6}{2}M_{hr}-\tfrac{\sqrt{10}}{2}N_{32}$,
+\begin{equation}
+\begin{gathered}
+a_1=\tfrac1{15}\big(2X-5Y+\sqrt5Z\big),\quad
+a_2=\tfrac1{30}\big(X+5Y+2\sqrt5Z\big),\quad
+a_3=\tfrac1{30}\big(4X+5Y-4\sqrt5Z\big),\\
+a_4=\tfrac16(m_A+2m_E),\quad a_5=\tfrac13(m_A-m_E),\quad
+a_6=\tfrac16\big(2x+y-2\sqrt2N_{32}\big),\\
+a_7=\tfrac16\big(2x-2y+\sqrt2N_{32}\big),\quad
+a_8=\tfrac13\big(x+2y+2\sqrt2N_{32}\big),\quad
+a_{11}=\tfrac12(5u-9x),\\
+a_9=\tfrac12(x-u)+\tfrac16\big(\sqrt6M_{hs}+\sqrt{30}M_{hr}+3\sqrt2N_{32}\big),\\
+a_{10}=\tfrac12(x-u)+\tfrac1{12}\big(2\sqrt6M_{hs}-\sqrt{30}M_{hr}-3\sqrt2N_{32}\big).
+\end{gathered}\label{eq:cub-lazar-inverse}
+\end{equation}
+For an isotropic tensor $u=x=y=0$, $X=M_{ss}-m_3$, $Y=M_{rr}-m_2$ and $Z=M_{sr}$, and
+the first line, with $a_4$ and $a_5$, inverts~\eqref{eq:iso-lazar}. The conditions
+\eqref{eq:cub-pd} in the constants $a_i$ follow by inserting~\eqref{eq:cub-lazar}.
+
+\subsection{Atomistic data}\label{sec:compliance-data}
+
+Table~\ref{tab:block-moduli} gives the block moduli of five cubic data sets: the MEAM
+constants of Al, Cu, Fe and W of Lazar et al.~\cite[table~1]{Lazar2022}, converted to
+$a_1,\dots,a_{11}$ by their eq.~(60), and the EAM constants of Cu of Po et
+al.~\cite[table~1]{Po2019}. Po et al.\ print the Al and Cu MEAM constants too, with five
+significant figures instead of five decimals; for the entries below $0.1$ in magnitude
+their digits are finer, and we take each entry from the finer of the two printings. Shodja et al.~\cite{Shodja2018} evaluated cubic constants by
+density functional theory under a central-force assumption, which imposes equalities
+among them; we
+use the complete tensors. The data of Al and of both potentials for Cu are positive
+definite. Those of Fe and W are not: Lazar et al.\ find one negative eigenvalue, threefold, a
+root of the quadratic factor~\cite[eqs.~(130)--(133) and table~5]{Lazar2022}. In the basis
+that factor is the $\irr{T_2}$ block, the only one that fails, with $\det N=\NumFeDetNT$ and $\NumWDetNT$~(eV/\AA)$^2$. Its
+entry $N_{33}$, the $\irr{T_2}$ part of $\Hrm3$, is negative ($\NumFeNthreethreeT$ and
+$\NumWNthreethreeT$~eV/\AA), but for W it nearly vanishes, and the indefiniteness comes
+from the coupling $N_{32}=\NumWNthreetwoT$~eV/\AA. With~\eqref{eq:cub-lazar}, the two
+conditions $N_{33}>0$ and $\det N>0$ are explicit in the constants $a_i$, and a fit of a
+potential could impose them. Indefinite gradient tensors
+are common among interatomic potentials~\cite{Admal2017,Lazar2022}; Admal et
+al.~\cite[eq.~(3.11)]{Admal2017} propose instead the positive definiteness of
+$\tfrac15R^2\,\tC\ot\kron+\tD$ for a sphere of radius $R$. Both terms are cubic, so the
+condition is a generalised eigenvalue problem per block; it holds for
+$R>\NumFeNeighborhoodRadius$~\AA\ (Fe) and $R>\NumWNeighborhoodRadius$~\AA\ (W), that is
+$\NumFeNeighborhoodRatio\,b$ and $\NumWNeighborhoodRatio\,b$ with $b$ the
+nearest-neighbour distance, consistent with their finding that it holds beyond $1.2\,b$ for
+all the potentials they examine, Fe and W included~\cite[section~3]{Admal2017}. The Cu MEAM tensor
+is nearly singular, with condition number $\NumCuMEAMCond$, because its $m_E$ is close to
+zero; the rounding of the published constants fixes $m_E$ only to within
+$\pm\NumCuMEAMmERoundingPercent\,\%$. These are properties of the potentials, not of the
+method. The compliance blocks of the three positive definite sets are in the
+supplementary material (table~S3).
+
+\subsection{Verification}\label{sec:compliance-verification}
+
+The results were checked by routes other than those that produced them. Blocks, inverses
+and averages are compared with the same operations on the $18\times18$ matrix of the
+tensor restricted to $\Vsg$; the multiplication tables, the inverses of general elements
+and the closed averages are also verified in exact arithmetic; the formulas printed in
+sections~\ref{sec:setting}--\ref{sec:averages} and appendix~\ref{app:lazar} are restated
+in the tests as printed and checked against the code. Published results enter after reconstruction: the constants
+and eigenvalues of Lazar et al.~\cite{Lazar2022}, the matrices of Auffray
+et al.~\cite{Auffray2013} and the tensors of Monchiet and Bonnet~\cite{Monchiet2011a,Monchiet2013}
+are reproduced (except the eigenvalue $\lambda_7^D$ of Cu in~\cite[table~5]{Lazar2022},
+printed as a repetition of $\lambda_4^D$; the $\irr{T_1}$ block gives
+$\NumCuMEAMLambdaSeven$~eV/\AA), and where a printed formula does not hold, both the printed and the
+corrected form are checked. Three such formulas enter this paper: the isotropic inverse of
+Monchiet and Bonnet~\cite[eq.~(2.13)]{Monchiet2011a}, whose terms in their $J_3$ and $J_4$
+need the opposite signs; the average over the sphere of the sixth-order Eshelby tensor of
+Ma et al.~\cite[eq.~(3.18)]{Ma2018} (appendix~\ref{app:eshelby}); and, in the scheme of
+Solyaev~\cite{Solyaev2023}, the deviatoric term of the fourth-order average in his eq.~(20),
+half that of Ma et al., his eq.~(21), which inherits their eq.~(3.18), and his eq.~(22), printed without the
+squares (section~\ref{sec:application}). We distinguish three levels: verification, against exact
+mathematics or an independent route of our own; cross-comparison, against a
+reconstructed published result; and consistency, through limit cases, invariances and
+inequalities on samples. No comparison is with measurements: the inputs are published
+atomistic constants and, in the hexagonal class, tensors of granular micromechanics. The tables, figures and
+computed numbers are written by scripts of the public code (Data accessibility), whose
+tests compare each file with its generator; section~S2 of the supplementary material
+maps each claim to its key tests, their reference and their level.
+
+\begin{table}[pos=tbp]
+\caption{Block moduli~\eqref{eq:cub-tensor} of the five cubic data sets (eV/\AA), from
+the MEAM constants of Lazar et al.~\cite[table~1]{Lazar2022} and the EAM constants of
+Po et al.~\cite[table~1]{Po2019} by~\eqref{eq:cub-lazar}; for Al and Cu MEAM each entry
+is taken from the finer of the two printings. Last rows: positive
+definiteness, with the failing block, and condition number of $\tD$ (largest eigenvalue over
+smallest eigenvalue modulus). The last digit shown is uncertain by at most five units
+given the precision of the published constants; $\dagger$ marks the entries whose
+relative uncertainty exceeds 1\,\%, here the $m_E$ of Cu MEAM ($\pm\NumCuMEAMmERoundingPercent\,\%$)
+and the condition number it sets. The Cu EAM constants obey the relations
+$D_{2,4}=D_{3,5}$ and $D_{2,5}=D_{16,17}$ that Admal et al.~\cite{Admal2017} find for
+pair functionals, that is, $a_3=4a_2$ and $a_1=a_5$.}\label{tab:block-moduli}
+\centering\small
+\input{block_moduli}
+\end{table}

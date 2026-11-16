@@ -1,0 +1,150 @@
+\section{Strain-gradient elasticity, symmetry classes and the isotropic algebra}\label{sec:setting}
+
+\subsection{Form II and the strain-gradient space}\label{sec:form-II}
+
+In Mindlin's form~II~\cite{Mindlin1964,MindlinEshel1968}, the energy density is a
+quadratic function of the strain $\varepsilon_{ij}=u_{(i,j)}$ and of the strain gradient,
+written with the derivative index last as in~\cite{Lazar2016,Lazar2022},
+$\eta_{ijk}=\varepsilon_{ij,k}$:
+\begin{equation}
+W=\tfrac12\,\strain:\tC:\strain+\tfrac12\,\sgrad\tdot\tD\tdot\sgrad,\qquad
+\stress=\tC:\strain,\qquad \dstress=\tD\tdot\sgrad,\qquad
+\tau_{ijm}=D_{ijmkln}\,\eta_{kln},\label{eq:energy}
+\end{equation}
+with $D_{ijmkln}=D_{jimkln}=D_{ijmlkn}=D_{klnijm}$. The fifth-order tensor coupling
+$\strain$ and $\sgrad$ vanishes for centrosymmetric materials~\cite{Lazar2022} and is
+absent throughout.
+
+The strain gradients form the space $\Vsg$ of third-order tensors symmetric in their first
+two indices (dimension 18, inner product $\eta_{ijk}\eta'_{ijk}$), and $\tD$ is a linear
+map of $\Vsg$. Composition is written by juxtaposition,
+$(\mathbb A\mathbb B)_{ijmkln}=A_{ijmpqr}B_{pqrkln}$; the identity is
+$I_{ijmkln}=\tfrac12(\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})\delta_{mn}$, the
+transpose $A^{\mathsf T}_{ijmkln}=A_{klnijm}$ and the inner product
+$\langle\mathbb A,\mathbb B\rangle=A_{ijmkln}B_{ijmkln}$; major symmetry is
+$\tD=\tD^{\mathsf T}$. Form~I uses $\kappa_{ijk}=u_{i,jk}$, of which $\sgrad$ is a linear
+combination~\cite{MindlinEshel1968}; with the isotropic, invertible
+but not isometric map $\mathbb T:\kappa\mapsto\sgrad$,
+$\eta_{ijk}=\tfrac12(\kappa_{ijk}+\kappa_{jik})$, the form-I tensor is
+$\mathbb T^{\mathsf T}\tD\,\mathbb T$. The orthogonal bases below belong to form~II;
+form~I enters only through the sources, in this index order for the granular tensors of
+section~\ref{sec:averages-hexagonal} and as $\tilde\kappa_{ijk}=\kappa_{kij}=u_{k,ij}$ in
+section~\ref{sec:application}.
+
+\subsection{Symmetry classes and their algebras}\label{sec:algebras}
+
+A rotation $Q$ acts on $\Vsg$ by the orthogonal map
+$(Q\star\sgrad)_{ijk}=Q_{ip}Q_{jq}Q_{kr}\eta_{pqr}$. The inversion acts as $-1$ and
+leaves every linear map of $\Vsg$ unchanged, so the symmetry of $\tD$ is fixed by a
+subgroup $G$ of $\SOrth$, and the algebra of the class is the commutant
+\begin{equation}
+\Alg{G}=\{\tK\in\End(\Vsg):\ (Q\star)\,\tK=\tK\,(Q\star)\ \text{for all } Q\in G\}.
+\label{eq:commutant}
+\end{equation}
+It is closed under composition, transposition and inversion. The tensors with major
+symmetry are its symmetric elements, a subspace but not a subalgebra; the others are the
+non-reciprocal (`odd') tensors of the class~\cite{Poorsolhjouy2026}. We write
+$\Alg{\clsiso}$, $\Alg{\clscub}$ and $\Alg{\clshex}$ for $G=\SOrth$, the octahedral group
+$O$ and $D_6$: crystals of point groups $\clscub$ and $\clshex$, which contain these
+rotations and the inversion, have gradient tensors of these classes and no fifth-order
+coupling. Lattices with a basis, such as diamond and hcp, are outside the scope, though
+not because of the class of $\tD$. Their atomistic tensors~\cite{Admal2017} are
+referred to a chosen reference point of the lattice, and the fifth-order coupling depends
+on that choice. At an atom site, of point group $\bar43m$ or $\bar6m2$, the improper
+operations act on $\tD$ as rotations, so $\tD$ is of class $\clscub$ or $\clshex$, but
+without the inversion the fifth-order coupling does not vanish. At an inversion centre
+it vanishes~\cite[theorem~1]{Admal2017}, but the point group is only $\bar3m$.
+
+Let the irreducible representation $p$ of $G$, of dimension $\dimirr{p}$, occur
+$\mult{p}$ times in $\Vsg$. Fix a model space $\mathcal W_p$ and, for each copy
+$a=1,\dots,\mult{p}$, an isometric $G$-equivariant embedding $\emb{a}^{p}:\mathcal
+W_p\to\Vsg$, with orthogonal images. Every irreducible representation of $\SOrth$, $O$
+and $D_6$ is of real type, so by Schur's lemma the units
+$\tU{p}{a}{b}=\emb{a}^{p}(\emb{b}^{p})^{\mathsf T}$ form a basis of $\Alg{G}$, with
+\begin{equation}
+\tU{p}{a}{b}\,\tU{q}{c}{d}=\delta_{pq}\delta_{bc}\,\tU{p}{a}{d},\qquad
+(\tU{p}{a}{b})^{\mathsf T}=\tU{p}{b}{a},\qquad
+\langle\tU{p}{a}{b},\tU{q}{c}{d}\rangle=\dimirr{p}\,\delta_{pq}\delta_{ac}\delta_{bd}.
+\label{eq:table}
+\end{equation}
+An element is $\tK=\sum_p\sum_{a,b}K^p_{ab}\,\tU{p}{a}{b}$, with one block
+$K^p\in\mathbb R^{\mult{p}\times\mult{p}}$ per irreducible representation:
+$\Alg{G}\cong\bigoplus_p\mathbb R^{\mult{p}\times\mult{p}}$ has dimension
+$\sum_p\mult{p}^2$, of which $\sum_p\tfrac12\mult{p}(\mult{p}+1)$ are symmetric
+(table~\ref{tab:algebras}). The table~\eqref{eq:table} reduces every operation to the
+blocks:
+\begin{equation}
+(\tK\mathbb L)^p=K^pL^p,\qquad
+\tK^{-1}=\sum_p\sum_{a,b}\big[(K^p)^{-1}\big]_{ab}\,\tU{p}{a}{b},\qquad
+K^p_{ab}=\langle\tK,\tU{p}{a}{b}\rangle/\dimirr{p}.\label{eq:block-rules}
+\end{equation}
+Hence $\tK$ is invertible if and only if every block is, the eigenvalues of a symmetric
+$\tK$ are those of its blocks, each $\dimirr{p}$-fold, and $\tK$ is positive definite if
+and only if every block is. For any linear map of $\Vsg$, the last formula
+of~\eqref{eq:block-rules} gives its orthogonal projection onto $\Alg{G}$
+(section~\ref{sec:averages}). When $\mult{p}>1$ the copies are not unique: another choice
+$\emb{a}^{p}\mapsto\sum_b\emb{b}^{p}R_{ba}$, $R\in\mathrm O(\mult{p})$, replaces $K^p$ by
+$R^{\mathsf T}K^pR$ and changes nothing else. This is Walpole's
+construction~\cite{Walpole1984} for fourth-order tensors, used for isotropic sixth-order
+tensors by Monchiet and Bonnet~\cite{Monchiet2011a} and Auffray~\cite{Auffray2015}; Glüge
+et al.~\cite{Gluge2016} give the spectral decomposition of the isotropic tensor of form~I,
+with a harmonic reading of its eigenmodes.
+
+\subsection{The isotropic algebra}\label{sec:isotropic}
+
+For $G=\SOrth$ we first split $\Vsg=\mathcal S\oplus\mathcal R$, with $\mathcal S$ the
+totally symmetric tensors (dimension 10, projector $\tP{\mathcal S}\sgrad=\eta_{(ijk)}$)
+and $\mathcal R$ its orthogonal complement (dimension 8). This splitting is invariant
+under $\GL$~\cite{Auffray2015,Lazar2016}, separates the stretch gradient
+($\mathcal S$) from the rotation gradient ($\mathcal R$)~\cite{Auffray2015} and is the
+grouping of Mindlin's form~III~\cite{MindlinEshel1968}. Removing the
+traces then gives
+\begin{equation}
+\mathcal S=\Hrm3\oplus\Hone{s},\qquad \mathcal R=\Hrm2\oplus\Hone{r},\qquad
+\Vsg=\Hrm3\oplus\Hrm2\oplus2\Hrm1\quad(18=7+5+3+3),\label{eq:iso-decomposition}
+\end{equation}
+where $\Hrm{\ell}$ has degree $\ell$. $\Hrm3$ is embedded as the totally symmetric
+traceless tensors; for vectors $v,w$ and traceless symmetric $X$,
+\begin{equation}
+\begin{gathered}
+(\emb{s}v)_{ijk}=\frac{v_i\delta_{jk}+v_j\delta_{ik}+v_k\delta_{ij}}{\sqrt{15}},\qquad
+(\emb{r}w)_{ijk}=\frac{2\delta_{ij}w_k-\delta_{ik}w_j-\delta_{jk}w_i}{\sqrt{12}},\\
+(\emb{2}X)_{ijk}=-\frac{\epsilon_{jkl}X_{li}+\epsilon_{ikl}X_{lj}}{\sqrt6},
+\end{gathered}\label{eq:iso-embeddings}
+\end{equation}
+with $\epsilon_{ijk}$ the permutation symbol. The trace $\eta_{ppk}$ of $\emb{s}v$ and
+$\emb{r}w$ is a positive multiple of $v$ and $w$, and for a displacement field, with
+$\bm\omega=\tfrac12\nabla\times\disp$,
+\begin{equation}
+\emb{s}^{\mathsf T}\sgrad=\frac{\nabla^2\disp+2\nabla(\nabla\cdot\disp)}{\sqrt{15}},\qquad
+\emb{r}^{\mathsf T}\sgrad=\frac{\nabla\times\bm\omega}{\sqrt3},\qquad
+\emb{2}^{\mathsf T}\sgrad=\sqrt{\tfrac23}\,\sym\nabla\bm\omega.\label{eq:iso-coordinates}
+\end{equation}
+
+$\Alg{\clsiso}$ has dimension 6 (5 symmetric), with the units
+\begin{equation}
+\tP{3}=\tP{\mathcal S}-\tU{1}{s}{s},\qquad \tP{2}=\tI-\tP{\mathcal S}-\tU{1}{r}{r},\qquad
+\tU{1}{a}{b}=\emb{a}\emb{b}^{\mathsf T}\quad(a,b\in\{s,r\}).\label{eq:iso-units}
+\end{equation}
+An isotropic gradient tensor and its inverse are
+\begin{equation}
+\tD=m_3\tP{3}+m_2\tP{2}+\sum_{a,b}M_{ab}\tU{1}{a}{b},\qquad
+\tD^{-1}=\frac{\tP{3}}{m_3}+\frac{\tP{2}}{m_2}+\sum_{a,b}(M^{-1})_{ab}\tU{1}{a}{b},
+\label{eq:iso-tensor}
+\end{equation}
+with $M$ symmetric $2\times2$; $\tD\succ0$ if and only if $m_3>0$, $m_2>0$ and $M\succ0$.
+In the constants $a_1,\dots,a_5$ of Lazar et al.~\cite[eqs.~(40) and (70)]{Lazar2022},
+\begin{equation}
+\begin{gathered}
+m_3=2(a_4+a_5),\qquad m_2=2a_4-a_5,\qquad
+M_{sr}=\tfrac{\sqrt5}{3}(a_1+4a_2-2a_3),\\
+M_{ss}=\tfrac{10}{3}(a_1+a_2+a_3)+m_3,\qquad
+M_{rr}=-\tfrac43a_1+\tfrac83a_2+\tfrac23a_3+m_2.
+\end{gathered}\label{eq:iso-lazar}
+\end{equation}
+The moduli $m_3$, $m_2$, $M_{ss}$ and $M_{rr}$ are $m_{s3}$, $m_{r2}$, $m_{s1}$ and
+$m_{r1}$ of Auffray~\cite[table~3]{Auffray2015}, and his coupling $m_{c1}$ is $M_{sr}$ up
+to the orientation of $\Hone{r}$. A couple-stress type material, whose energy depends only
+on the rotation gradient, has $\tD=\tP{\mathcal R}\tD\tP{\mathcal R}$ and so
+$m_3=M_{ss}=M_{sr}=0$: these copies leave it uncoupled. Lazar~\cite{Lazar2016} uses
+another pair; appendix~\ref{app:lazar} gives the conversion.

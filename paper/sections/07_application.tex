@@ -1,0 +1,129 @@
+\section{Illustrative application: a self-consistent estimate}\label{sec:application}
+
+The self-consistent scheme needs all four operations of the algebra on a complete cubic
+tensor. It yields three results. The concentration tensor of the grain comes in blocks,
+and it shows that the scheme needs six conditions where five have been imposed
+(section~\ref{sec:application-blocks}). For grains of physical size the scheme has a
+closed limit, in which the polycrystal sees the grain only through its Voigt estimate
+(section~\ref{sec:application-limit}). And the average of the Eshelby tensor on which the
+scheme rests is obtained exactly (appendix~\ref{app:eshelby}).
+
+Solyaev~\cite{Solyaev2023} extended Kr\"oner's self-consistent scheme to strain-gradient
+elasticity. A spherical grain of radius $R$, with tensors $\tC_\gr$ and $\tD_\gr$, lies in
+the isotropic effective medium $(\tC,\tD)$ under a uniform strain and a uniform strain
+gradient, and the averages over the grain and over its orientations must return them. He
+works in form~I with the variable $\tilde\kappa_{ijk}=u_{k,ij}=\eta_{kij}+\eta_{kji}-\eta_{ijk}$,
+that is, $\tilde{\bm\kappa}=(3\tP{\mathcal S}-2\tI)\sgrad$, which multiplies the copies in $\mathcal S$ by $1$ and those
+in $\mathcal R$ by $-2$: a form-I block is the form-II block rescaled copy by copy, and the
+algebras do not change. In this form, the gradient condition reads~\cite[eqs.~(7)
+and~(10)]{Solyaev2023}
+\begin{equation}
+\tB=\big(\tI+\tSav\,\tD^{-1}(\tD_\gr-\tD)\big)^{-1},\qquad \avg{\tB}=\tI,
+\label{eq:sc-condition}
+\end{equation}
+with $\tSav$ the average over the sphere of the sixth-order Eshelby tensor of the medium:
+as in Solyaev's scheme, the Eshelby field, which is not uniform in the grain, is replaced
+by its average. The fourth-order analogue, with $\tC$ and $\tC_\gr$, becomes Kr\"oner's condition for
+large grains.
+
+\subsection{The concentration tensor in blocks}\label{sec:application-blocks}
+
+Since $\tD$ and $\tSav$ are isotropic, $\mathbb L=\tSav\tD^{-1}$ is an isotropic element
+without major symmetry, and $\tB$ lies in $\Alg{\clscub}$ for a cubic grain, with
+\begin{equation}
+\tB^p=\big(I+\mathbb L^p(\tD^p_\gr-\tD^p)\big)^{-1},\label{eq:sc-blocks}
+\end{equation}
+where, by~\eqref{eq:cub-iso-units}, an isotropic element $(m_3,m_2,M)$ has the cubic blocks
+$\mathrm{diag}(m_3,M)$ in $\irr{T_1}$, $\mathrm{diag}(m_3,m_2)$ in $\irr{T_2}$, $m_2$ in
+$\irr{E}$ and $m_3$ in $\irr{A_2}$. The grain enters through one $3\times3$, one $2\times2$
+and two scalar inversions. By~\eqref{eq:weighted-means}, which holds without major
+symmetry, $\avg{\tB}$ has the isotropic blocks
+$y_3=\tfrac17(3B^{T_1}_{hh}+3B^{T_2}_{33}+B^{A_2})$,
+$y_2=\tfrac15(3B^{T_2}_{22}+2B^{E})$ and $Y=B^{T_1}_{(sr)}$, and
+\begin{equation}
+\avg{\tB}=\tI\iff y_3=y_2=1,\quad Y=I_2:\label{eq:sc-six}
+\end{equation}
+six scalar equations, as many as the dimension of $\Alg{\clsiso}$. Solyaev imposes five
+linear invariants~\cite[eq.~(13)]{Solyaev2023}. The sixth is $B_2'=B_{ijjkki}$, the
+transpose of his $B_2=B_{iikkjj}$, and in his variables
+\begin{equation}
+B_2-B_2'=3\sqrt5\,(Y_{rs}-Y_{sr}),\label{eq:sc-sixth}
+\end{equation}
+so the five fix $\avg{\tB}$ only if $Y$ is symmetric, which $\tSav$ does not ensure (its
+$\Hrm1$ block is not symmetric; appendix~\ref{app:eshelby}). We measure the mismatch by the
+residual $\scres$ of his eq.~(22), printed without squares, with every term squared: the
+root sum of squares of the
+relative errors of $A_1$, $A_2$ (fourth order) and $B_1,\dots,B_5$, seven terms, or eight
+with $B_2'$.
+
+\subsection{Large grains}\label{sec:application-limit}
+
+Solyaev's medium is the Helmholtz tensor $\ell^2\tC\ot\kron$ of form~II (his eq.~(19), read
+as in~\cite[eq.~(4.3)]{Ma2018} and~\cite[eq.~(3.3)]{Gao2009}; read literally with his
+$\tilde\kappa=\nabla\nabla\disp$, it would put $\tC$ on the derivative indices, which is not
+the Helmholtz tensor, and such readings are tried in section~S6 of the supplementary
+material), taken to form~I, with the bulk modulus of the
+grain, so that $A_1=3$; the unknowns are $\nu$ and $\ell$. For this medium the exact average is
+$\tSav=\Phi(R/\ell)\,\hat{\tS}(\lambda,\mu)$ (appendix~\ref{app:eshelby}), with
+$\Phi$ the function of~\cite[eq.~(21)]{Solyaev2023}, $\Phi\approx-\ell/(2R)$ for $R\gg\ell$. Write $\tD=\ell^2\hat\tD$.
+Since the orientation average commutes with composition by isotropic elements, to first
+order in $\Phi$
+\begin{equation}
+\avg{\tB}-\tI=-\Phi\,\hat{\tS}\hat\tD^{-1}\big(\ell^{-2}\Vg{\tD_\gr}-\hat\tD\big),
+\label{eq:sc-limit}
+\end{equation}
+where only the Voigt estimate of the grain enters. The $A$ conditions fix $\nu$ at
+Kr\"oner's value $\nu_{\mathrm K}$~\cite[eq.~(3.7)]{Blaschke2017},
+\cite[eq.~(16b)]{Kube2016}, and the $B$ terms give, to leading order, $\scres=|\Phi|\,|\ell^{-2}\bm\alpha-\bm\gamma|$,
+with $\bm\alpha$ and $\bm\gamma$ the invariants $B_t$ relative to their values $B_t^0$ for $\tI$, of
+$\hat{\tS}\hat\tD^{-1}\Vg{\tD_\gr}$ and $\hat{\tS}$. As $|\Phi|$ grows with $\ell$, the
+minimum is at
+\begin{equation}
+\linf^{-2}=|\bm\gamma|/|\bm\alpha|,\qquad \scres/|\Phi|\;\to\;\big|\linf^{-2}\bm\alpha-\bm\gamma\big|.
+\label{eq:sc-linf}
+\end{equation}
+
+\subsection{Results}\label{sec:application-results}
+
+Table~\ref{tab:application} gives the limit for the positive definite data. It agrees
+with the full minimisation at $R=1000$~\AA, and from $2R=2$~nm on the minimising $\ell$ is
+within $\NumSCNearLimitPercent$\,\% of $\linf$ (supplementary material, section~S5). Three
+readings follow. First, for grains of physical size the scheme sees the grain only through
+$\Vg{\tD_\gr}$: no inverse of $\tD_\gr$ enters, and the block inversions
+of~\eqref{eq:sc-blocks} matter only at sub-nanometre sizes. Second, the limit diagnoses the
+scheme itself. The Helmholtz medium has equal block lengths~\eqref{eq:block-lengths}, while
+those of $\Vg{\tD_\gr}$, with Kr\"oner's $\tC$, spread by $\NumAlVoigtKronerSpread$,
+$\NumCuMEAMVoigtKronerSpread$ and $\NumCuEAMVoigtKronerSpread$. No single $\ell$ meets the
+six conditions: the normalised residual stays at
+$\scres/|\Phi|=\NumAlLimResidualSeven$--$\NumCuEAMLimResidualSeven$. The residual itself
+vanishes with $|\Phi|$: with seven terms it is $\NumSCResidualTwoNmMin$--$\NumSCResidualTwoNmMax$
+at $2R=2$~nm and $\NumSCResidualHundredNmMin$--$\NumSCResidualHundredNmMax$ at $2R=100$~nm, so
+for large grains every $\ell$ of the order of 1~\AA\ nearly meets the conditions,
+and $\ell$ is only weakly determined, as the minimiser of the coefficient of a vanishing
+quantity. That minimiser $\linf$, a weighted compromise, exceeds $\lLP$ of the same Voigt estimate by $\NumAlLimOverLengthPercent$,
+$\NumCuMEAMLimOverLengthPercent$ and $\NumCuEAMLimOverLengthPercent$\,\%. A one-length
+medium cannot represent these polycrystals, and a medium with five gradient constants is
+the next step, for which appendix~\ref{app:eshelby} already gives the general average.
+Third, the sixth condition $B_2'=3$, which the seven-term solutions miss by up to
+$\NumSCSixthSolutionMaxPercent$\,\%, moves $\linf$ by at most $\NumCuEAMLimShiftPercent$\,\%. Like the averages, the scheme
+ignores the moduli induced by the heterogeneity of $\tC$~\cite{Malyi2021}, which at the
+grain sizes where it reduces to $\Vg{\tD_\gr}$ are the dominant ones
+(section~\ref{sec:averages-cubic}): it illustrates the algebra, not a homogenisation
+theory.
+
+With the grain constants of Solyaev's iron example, and grain and medium both written as the
+form~II Helmholtz model, the scheme returns $\ell=\NumFeAllEllMin$--$\NumFeAllEllMax\,\ell_0$
+and Kr\"oner's $\nu$ over the grain sizes of his figure~2, with any of the three averaged
+tensors (the exact one, that of Ma et al.\ and his printed one); we could not reproduce the
+published increase of $\ell$ (supplementary material, section~S6).
+
+\begin{table}[pos=tbp]
+\caption{Self-consistent estimate for large grains~\eqref{eq:sc-linf}: Poisson's ratio
+$\nu_{\mathrm K}$ of Kr\"oner's classical estimate, with the bulk modulus of the grain; length
+$\linf$ and normalised residual $\scres/|\Phi|$ with seven terms and, in brackets, eight;
+spread $\ell_{\max}/\ell_{\min}$ of the block lengths~\eqref{eq:block-lengths} of the Voigt
+estimate and its $\lLP$~\eqref{eq:lazar-po-length}, both relative to Kr\"oner's $\tC$.
+Digits as in table~\ref{tab:averages}.}\label{tab:application}
+\centering\small
+\input{application}
+\end{table}

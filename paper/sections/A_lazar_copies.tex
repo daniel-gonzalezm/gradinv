@@ -1,0 +1,41 @@
+\section{Conversion to the copies of Lazar (2016)}\label{app:lazar}
+
+Lazar~\cite{Lazar2016} splits $\sgrad$ first into the dilatation gradient $\eta_{ppk}$ and
+the shear gradient, and obtains two vector pieces: the dilatation-gradient piece
+${}^{(4)}\eta_{ijk}=\tfrac13\delta_{ij}\eta_{ppk}$ and the shear-divergence piece
+${}^{(3)}\eta_{ijk}$, built from the trace of the shear gradient~\cite[eqs.~(53)--(54)]{Lazar2016}.
+Their unit embeddings, $(\emb{(4)}v)_{ijk}=\delta_{ij}v_k/\sqrt3$ and $\emb{(3)}v$, a
+positive multiple of $\delta_{ik}v_j+\delta_{jk}v_i-\tfrac23\delta_{ij}v_k$, span the same
+plane as $\emb{s}$ and $\emb{r}$:
+\begin{equation}
+(\emb{(4)},\emb{(3)})=(\emb{s},\emb{r})\,R_\theta,\qquad
+R_\theta=\begin{pmatrix}\cos\theta&\sin\theta\\ \sin\theta&-\cos\theta\end{pmatrix},\qquad
+\cos\theta=\tfrac{\sqrt5}{3},\quad \sin\theta=\tfrac23.\label{eq:lazar-pair}
+\end{equation}
+$R_\theta$ is a reflection: the rotation by $\theta=\arccos(\sqrt5/3)\approx41.81^\circ$
+followed by the reversal of piece~(3). The irreducible gradient parameters $b_1,\dots,b_5$
+of~\cite[eq.~(60)]{Lazar2016} are $b_1=m_3$, $b_2=m_2$ and
+\begin{equation}
+M=R_\theta\begin{pmatrix}b_4&\tfrac{\sqrt5}{3}b_5\\ \tfrac{\sqrt5}{3}b_5&b_3\end{pmatrix}R_\theta,
+\qquad\text{that is,}\quad
+\begin{aligned}
+M_{ss}&=\tfrac19(5b_4+4b_3)+\tfrac{20}{27}b_5,\\
+M_{sr}&=\tfrac{2\sqrt5}{9}(b_4-b_3)-\tfrac{\sqrt5}{27}b_5,\\
+M_{rr}&=\tfrac19(4b_4+5b_3)-\tfrac{20}{27}b_5,
+\end{aligned}\label{eq:lazar-block}
+\end{equation}
+where $\sqrt5/3$ is the value of his cross term
+${}^{(3)}\eta_{ijk}\,{}^{(4)}\eta_{kji}$ for unit pieces. In the cubic class, $s$ and $r$
+are copies of $\irr{T_1}$: \eqref{eq:lazar-block} converts the $(s,r)$ part of $M$, and
+the couplings $(M_{hs},M_{hr})$ transform by $R_\theta$. In the hexagonal class the same
+holds for the $(s,r)$ parts of the $\irr{A_2}$ and $\irr{E_1}$ blocks. The change is
+orthogonal within each block, so inverses, eigenvalues and positive definiteness are
+unaffected (section~\ref{sec:algebras}).
+
+Neither pair is singled out by $\Orth$: Lazar's is adapted to the traces of $\sgrad$, the
+$\GL$ pair to the splitting $\Vsg=\mathcal S\oplus\mathcal R$. The Helmholtz-type separable
+tensor $\ell^2\tC\ot\kron$, with isotropic $\tC$ of Lamé constants $\lambda$ and $\mu$, is
+diagonal in Lazar's pair, $b_4=(3\lambda+2\mu)\ell^2$, $b_3=2\mu\ell^2$, $b_5=0$, and
+coupled in the $\GL$ pair, $M_{sr}=\tfrac{2\sqrt5}{3}\lambda\ell^2$; a couple-stress
+material is uncoupled in the $\GL$ pair (section~\ref{sec:isotropic}) and coupled in
+Lazar's.

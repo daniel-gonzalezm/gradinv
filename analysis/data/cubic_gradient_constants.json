@@ -1,0 +1,69 @@
+{
+  "_description": "Transcribed elastic (C) and gradient-elastic (D) constants of cubic crystals. Form II of Mindlin's theory, D_ijmkln with eta_ijk = d_k eps_ij. Units: C in eV/A^3, D and a_i in eV/A. Transcribed by hand from the PDFs and checked on 2026-10-22; every digit re-checked against the PDF text on 2026-10-30 (analysis/check_transcriptions.py). Provenance of every entry: provenance.csv.",
+  "_voigt_order": ["111", "221", "122", "331", "133", "222", "112", "121", "332", "233", "333", "113", "131", "223", "232", "123", "132", "231"],
+  "_voigt_keys": ["D1,1", "D1,2", "D1,3", "D2,2", "D2,3", "D2,4", "D2,5", "D3,3", "D3,5", "D16,16", "D16,17"],
+  "_a_convention": "a1..a11 as in Lazar, Agiasofitou & Boehlke (2022), eq. (40); conversion Voigt -> a by their eq. (60).",
+  "datasets": {
+    "lazar2022": {
+      "source": "Lazar, Agiasofitou, Boehlke, Continuum Mech. Thermodyn. 34:107-136 (2022), Tables 1 and 2",
+      "provenance": "published (computed in Admal et al. 2017 / Po et al. 2019 with the 2NN MEAM potential of Lee et al. 2001, OpenKIM MD_111291751625_001)",
+      "use_rule": "Table 1 is the input; a_i are recomputed with eq. (60). Table 2 agrees with eq. (60)(Table 1) to rounding (max 7e-5). Do not copy Table 5 (Cu lambda_7 misprint) or Table 3 values; recompute.",
+      "positive_definite_D": {"Al": true, "Cu": true, "Fe": false, "W": false},
+      "C": {
+        "Al": [0.71366, 0.38649, 0.19704],
+        "Cu": [1.09941, 0.77973, 0.51043],
+        "Fe": [1.51659, 0.86160, 0.76096],
+        "W":  [3.32405, 1.28028, 1.01812]
+      },
+      "D_voigt": {
+        "Al": [1.08551, 0.14572, 0.15934, 0.84221, 0.15671, 0.71708, -0.01143, 0.27613, -0.12408, 0.16786, 0.15006],
+        "Cu": [0.65018, 0.36659, 0.24150, 0.73885, 0.20651, 0.47496, -0.04254, 0.29055, -0.01828, 0.03742, 0.03739],
+        "Fe": [1.07423, 0.32346, 0.22850, 0.66683, 0.03922, 0.91961, 0.36430, 0.50912, 0.29905, 0.41599, 0.38300],
+        "W":  [3.04998, -0.13792, 0.49286, 1.16373, 0.05159, 1.75586, 0.71878, 0.89435, 0.09548, 0.85853, 0.61640]
+      },
+      "a_table2": {
+        "Al": [-0.02287, 0.35854, -0.24815, 0.16786, 0.30012, 0.08229, -0.13198, -0.21058, -0.54849, 0.41893, -0.19492],
+        "Cu": [-0.08509, 0.23748, -0.03655, 0.03742, 0.07479, 0.23401, 0.17426, 0.18906, -0.02327, 0.32059, -2.86388],
+        "Fe": [0.72859, 0.45980, 0.59810, 0.41599, 0.76600, -0.58892, -1.09107, -1.08476, -1.32474, -0.73389, 8.52704],
+        "W":  [1.43755, 0.87793, 0.19097, 0.85853, 1.23279, -0.67605, -1.89998, -2.30919, -3.33133, -0.41688, 14.79794]
+      },
+      "note": "Lazar & Po, J. Mater. Sci.: Mater. Theory 8:5 (2024), Table 1, repeats C and a_table2 digit by digit (checked 2026-10-22). Stored as dataset lazarpo2024."
+    },
+    "po2019": {
+      "source": "Po, Admal, Lazar, Materials Theory 3:3 (2019), Table 1",
+      "provenance": "published; Cu EAM: EAM potential of Mendelev et al. (2008) according to their text (their KIM reference MO_106969701023_001 is titled 'FS potential for Al'); Cu and Al MEAM: Lee 2NN MEAM (same data as lazar2022, more digits for some entries). Full provenance: provenance.csv",
+      "use_rule": "Same Voigt (non-normalized) notation and ordering as lazar2022 Table 1. Cu EAM is an independent third dataset (positive definite). Po et al. note possible artefacts of EAM gradient constants.",
+      "C": {
+        "Cu_EAM":  [1.0868, 0.79386, 0.52252],
+        "Cu_MEAM": [1.0994, 0.77973, 0.51043],
+        "Al_MEAM": [0.71366, 0.38649, 0.19704]
+      },
+      "D_voigt": {
+        "Cu_EAM":  [1.1182, 0.35814, 0.37951, 0.47935, 0.30103, 0.12789, 0.10652, 0.43662, 0.12789, 0.14925, 0.10652],
+        "Cu_MEAM": [0.65018, 0.36659, 0.24150, 0.73885, 0.20651, 0.47496, -0.042545, 0.29055, -0.018275, 0.037419, 0.037394],
+        "Al_MEAM": [1.0855, 0.14572, 0.15934, 0.84221, 0.15671, 0.71708, -0.011434, 0.27613, -0.12408, 0.16786, 0.15006]
+      }
+    },
+    "lazarpo2024": {
+      "source": "Lazar and Po, J. Mater. Sci.: Mater. Theory 8:5 (2024), Tables 1 and 2",
+      "provenance": "published; same 2NN MEAM data as lazar2022 (their Table 1 cites Lazar et al. 2022). Transcribed from the rendered pages 23-24 and checked on 2026-10-26.",
+      "use_rule": "Table 1 is not an independent dataset: it repeats lazar2022 C and a_table2 digit by digit. Recompute ell with eq. (107), ell^2 = S_ijkl D_ijmklm / 18; eq. (108) lacks a factor 1/18. The printed ell of Fe and W do not follow from eq. (107) and Table 1, while the printed ell/a do: slip in the ell column for Fe and W.",
+      "units": "C in eV/A^3, a in eV/A, ell and lattice_a in A",
+      "C": {
+        "Al": [0.71366, 0.38649, 0.19704],
+        "Cu": [1.09941, 0.77973, 0.51043],
+        "Fe": [1.51659, 0.86160, 0.76096],
+        "W":  [3.32405, 1.28028, 1.01812]
+      },
+      "a_table1": {
+        "Al": [-0.02287, 0.35854, -0.24815, 0.16786, 0.30012, 0.08229, -0.13198, -0.21058, -0.54849, 0.41893, -0.19492],
+        "Cu": [-0.08509, 0.23748, -0.03655, 0.03742, 0.07479, 0.23401, 0.17426, 0.18906, -0.02327, 0.32059, -2.86388],
+        "Fe": [0.72859, 0.45980, 0.59810, 0.41599, 0.76600, -0.58892, -1.09107, -1.08476, -1.32474, -0.73389, 8.52704],
+        "W":  [1.43755, 0.87793, 0.19097, 0.85853, 1.23279, -0.67605, -1.89998, -2.30919, -3.33133, -0.41688, 14.79794]
+      },
+      "ell_table2": {"Al": 1.1774, "Cu": 0.7852, "Fe": 0.7420, "W": 0.8502},
+      "lattice_a_table2": {"Al": 4.0495, "Cu": 3.6149, "Fe": 2.8665, "W": 3.1652},
+      "ell_over_a_table2": {"Al": 0.2907, "Cu": 0.2172, "Fe": 0.2592, "W": 0.2688}
+    }
+  }
+}

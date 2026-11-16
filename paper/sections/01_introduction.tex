@@ -1,0 +1,102 @@
+\section{Introduction}\label{sec:intro}
+
+Strain-gradient elasticity adds to the classical energy a quadratic form in the strain
+gradient, governed in Mindlin's form~II by a sixth-order tensor
+$\tD$~\cite{Mindlin1964,MindlinEshel1968}. For crystals it is no longer unknown: Admal et al.~\cite{Admal2017} derived its atomistic
+representation, and Lazar et al.~\cite{Lazar2022} and Po et al.~\cite{Po2019} published
+complete cubic tensors of fcc and bcc metals from interatomic potentials, which now enter non-singular theories of dislocations~\cite{Po2018,Lazar2024};
+granular micromechanics gives anisotropic gradient tensors in terms of the
+fabric~\cite{Pirmoradi2024}. Using such tensors for heterogeneous bodies
+requires the operations that classical micromechanics performs on
+fourth-order tensors: products, inverses, orientation averages and concentration tensors.
+Inverses of sixth-order tensors appear in the inclusion and inhomogeneity problems of
+Monchiet and Bonnet~\cite{Monchiet2011a,Monchiet2013,Monchiet2015} and of Ma et al.~\cite{Ma2018},
+the compliance in estimates of Reuss type~\cite{Nazarenko2021a}, and all four operations
+in the self-consistent scheme of Solyaev~\cite{Solyaev2023}.
+
+For fourth-order tensors, Walpole~\cite{Walpole1984} gave bases with multiplication tables
+for the 32 crystal classes, which reduce these operations to products of small matrices;
+bases of the same kind also give the orientation averages of third-order elastic
+constants~\cite{Kube2026}, and harmonic bases of tensors of any order, with tensorial
+texture coefficients, follow from the representations of the rotation
+group~\cite{Krause2025}. For gradient tensors, the corresponding algebra is known for
+isotropy~\cite{Monchiet2011a,Auffray2015}, also without the minor
+symmetries~\cite{Monchiet2011b}, and for transverse isotropy~\cite{Monchiet2013}, where
+it was built to solve inhomogeneity and crack problems~\cite{Monchiet2015}. The anisotropic tensors have been classified. Olive and Auffray~\cite{Olive2013}
+obtained the 17 symmetry classes of the sixth-order tensor, and Auffray et
+al.~\cite{Auffray2013} wrote the matrix of each class in an orthonormal basis, and later
+for the 48 classes of the whole law, fifth-order coupling included~\cite{Auffray2019}. Le Quang
+et al.~\cite{LeQuang2021} classified the tensors by their symmetry planes, Auffray et
+al.~\cite{Auffray2021} made the harmonic structure explicit in two dimensions, and
+Poorsolhjouy~\cite[table~B.2]{Poorsolhjouy2026} counted, class by class, the tensors
+without major symmetry. Demonteaux et al.~\cite{Demonteaux2025} report an orthogonal basis for the cubic
+tensor, obtained from the character and projection formulas of the cubic group; its
+formulas are not yet published. For the cubic class, Lazar et al.~\cite{Lazar2022} wrote
+the tensor with eleven constants, reduced its matrix to diagonal blocks of sizes five and
+three, and obtained its eigenvalues by factoring the characteristic polynomial of the
+block of size five into a quadratic and a cubic, conditions of positive definiteness and Voigt
+average. Averages of the same Voigt type have been computed for fcc metals in Mindlin's
+second-gradient theory~\cite{Bagherpour2024a,Bagherpour2024b}. Nazarenko et
+al.~\cite{Nazarenko2021a} gave the inverse of the coupled constitutive law in tensorial
+form, explicitly for hemitropic materials.
+
+These works establish how many constants each class has and where they sit in a matrix:
+they are parametrisations. An algebra is a different object, a basis in which the
+product of two tensors of the class is a product of small blocks, so that the inverse,
+the orientation average and the concentration tensor follow block by block. To our
+knowledge no such basis, and no closed-form compliance or Reuss estimate, has been
+published for the cubic or the hexagonal class. For the cubic class an orthogonal basis
+has been announced~\cite{Demonteaux2025}; what we add there are its explicit formulas,
+the multiplication table and their uses. The hexagonal class has a further interest.
+In two dimensions, the gradient tensor of a hexagonal lattice is anisotropic whereas its
+classical tensor is isotropic, which makes wave propagation anisotropic at high
+frequency~\cite{Rosi2016}. In three dimensions the hexagonal classical tensor is
+transversely isotropic, and the single gradient modulus that breaks transverse isotropy
+has been identified only as the coefficient of a fixed matrix~\cite{Auffray2013}, which
+we write $\eta_{\mathrm A}$ (their $\eta$) to keep $\sgrad$ for the strain gradient.
+
+This paper constructs these algebras and uses them. First, we give coordinate-free bases,
+with closed multiplication tables, of the algebras of the classes $\clscub$ and $\clshex$
+on the strain-gradient space, of dimensions 15 and 32. Their symmetric elements are the
+gradient tensors, with 11 and 22 constants, and the other elements are the
+non-reciprocal tensors of the same classes. Repeated irreducible components are labelled
+by the chain $\GL\supset\SOrth\supset G$, with the conversion to the labels of
+Lazar~\cite{Lazar2016}. The hexagonal modulus absent from transverse isotropy is the
+splitting of the part of azimuthal order $\pm3$ of the totally symmetric harmonic
+component into two irreducible parts, equivalently, up to a factor, the component of
+$\tD$ along the hexagonal structure tensor $\mathrm{Re}\,(\bm a+\iu\,\bm n\times\bm a)^{\ot6}$, and it
+equals $4\eta_{\mathrm A}$. The hexagonal algebra is the transversely isotropic algebra of
+Monchiet and Bonnet~\cite{Monchiet2013} with one of its idempotents split in two; what is
+new there is the orthonormal basis, the identification of the extra modulus and the closed
+forms. Second, the gradient compliance $\tD^{-1}$ follows in closed block form,
+with conditions of invertibility and positive definiteness block by block and the change of basis to and from the constants of Lazar et
+al.~\cite{Lazar2022} and the matrices of Auffray et al.~\cite{Auffray2013}. Third, the
+Voigt, Reuss and Hill estimates of untextured polycrystals are weighted means of the
+block moduli. The Reuss estimate lies below the Voigt one, with equality only for an
+isotropic crystal; in the cubic case their vector-like blocks differ by a matrix of rank
+one, and the hexagonal extra modulus drops out of the Voigt estimate. The cubic formulas
+are applied to the published atomistic data of fcc and bcc metals. Finally, as an illustration, the self-consistent
+scheme of Solyaev~\cite{Solyaev2023} with the complete cubic tensor reduces to the
+inversion of four blocks and, for grains of physical size, sees the grain only through
+its Voigt estimate. On the way we correct the average over the sphere of the sixth-order
+Eshelby tensor of Ma et al.~\cite{Ma2018}, on which that scheme relies.
+
+The averages are algebraic estimates, not bounds, and the paper is not a homogenisation
+theory: the heterogeneity of the classical stiffness alone induces gradient moduli that
+grow with the square of the grain size~\cite{Malyi2021}, and no average of $\tD$ contains
+them. By Malyi's estimate they equal the Voigt estimate of $\tD$ at a grain diameter of
+about $\NumAlInducedCrossoverNm$~nm for Al and $\NumCuMEAMInducedCrossoverNm$~nm for Cu
+and dominate above it (section~\ref{sec:averages-cubic}). The averages are therefore the
+part of the effective tensor carried by $\tD$: an isotropic substitute for the crystal
+tensor, as in~\cite[section~7]{Lazar2022}, the gradient tensor of nanocrystals whose grains
+are a few lattice parameters across, and an ingredient of a scheme that also accounts for
+the heterogeneity of $\tC$. No hexagonal gradient tensor of a crystal has been published, so the hexagonal
+results are illustrated with the granular micromechanics of Pirmoradi
+et al.~\cite{Pirmoradi2024}, in which the extra modulus is the sixfold harmonic of the
+contact distribution.
+
+Section~\ref{sec:setting} recalls form~II and builds the isotropic algebra as a template,
+sections~\ref{sec:cubic}--\ref{sec:application} treat the cubic and hexagonal algebras,
+the compliance with the data and the verification, the averages and the illustration,
+and the appendices convert our labels to those of Lazar and derive the averaged Eshelby
+tensor.

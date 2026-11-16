@@ -1,0 +1,248 @@
+\section{Orientation averages}\label{sec:averages}
+
+\subsection{The rule of weighted means}\label{sec:averages-rule}
+
+In an untextured polycrystal the grain orientations are uniformly distributed, and the
+average of an element of a crystal algebra over the rotations,
+$\avg{\tK}=\int_{\SOrth}(Q\star)\,\tK\,(Q\star)^{\mathsf T}\,\dd Q$, is isotropic. The
+average is linear, idempotent, self-adjoint for $\langle\cdot,\cdot\rangle$ and fixes
+$\Alg{\clsiso}$, so it is the orthogonal projection onto $\Alg{\clsiso}$, and the last
+formula of~\eqref{eq:block-rules} gives its moduli. By~\eqref{eq:cub-iso-units}
+and~\eqref{eq:hex-iso-units}, each isotropic unit is a sum of crystal units; hence the
+isotropic moduli of $\avg{\tK}$ are means of the crystal block entries weighted by the
+dimensions of the irreducible components,
+\begin{equation}
+m_\ell=\sum_p\frac{\dimirr{p}}{2\ell+1}\,K^p_{c_\ell c_\ell}\quad(\ell=3,2),\qquad
+M_{ab}=\sum_p\frac{\dimirr{p}}{3}\,K^p_{ab}\quad(a,b\in\{s,r\}),\label{eq:weighted-means}
+\end{equation}
+where $c_\ell$ is the copy of $\Hrm{\ell}$ in $p$ and the sums run over the $p$ that
+contain one. The weights add up to one, the couplings between copies of different
+$\Hrm{\ell}$ do not survive, and the rule holds for the non-symmetric elements too. For
+the Voigt estimate $\Vg{\tD}=\avg{\tD}$ of a cubic tensor,
+\begin{equation}
+\Vg{m_3}=\tfrac17\big(3M_{hh}+3N_{33}+m_A\big),\qquad
+\Vg{m_2}=\tfrac15\big(3N_{22}+2m_E\big),\qquad \Vg{M}=M_{(sr)},\label{eq:cub-voigt}
+\end{equation}
+with $M_{(sr)}$ the $(s,r)$ part of $M$. The Reuss estimate
+$\Rs{\tD}=\avg{\tD^{-1}}^{-1}$ applies the rule to the inverse blocks and inverts each
+isotropic block; with $\bm m_h=(M_{hs},M_{hr})^{\mathsf T}$,
+\begin{equation}
+\begin{gathered}
+\frac1{\Rs{m_3}}=\frac17\Big(3(M^{-1})_{hh}+3(N^{-1})_{33}+\frac1{m_A}\Big),\qquad
+\frac1{\Rs{m_2}}=\frac15\Big(3(N^{-1})_{22}+\frac2{m_E}\Big),\\
+\Rs{M}=M_{(sr)}-\frac{\bm m_h\bm m_h^{\mathsf T}}{M_{hh}},
+\end{gathered}\label{eq:cub-reuss}
+\end{equation}
+the last being the Schur complement of $M_{hh}$, the inverse of $(M^{-1})_{(sr)}$. For a
+hexagonal tensor,
+\begin{equation}
+\begin{gathered}
+\Vg{m_3}=\tfrac17\big(\hexA_{33}+m_{B_1}+m_{B_2}+2\hexF_{33}+2\hexG_{33}\big),\qquad
+\Vg{m_2}=\tfrac15\big(m_{A_1}+2\hexF_{22}+2\hexG_{22}\big),\\
+\Vg{M}=\tfrac13\big(\hexA_{(sr)}+2\hexF_{(sr)}\big),\qquad
+(\Rs{M})^{-1}=\tfrac13\big((\hexA^{-1})_{(sr)}+2(\hexF^{-1})_{(sr)}\big),\\
+\frac1{\Rs{m_3}}=\frac17\Big(c+\frac1{m_{B_1}}+\frac1{m_{B_2}}\Big),\qquad
+\frac1{\Rs{m_2}}=\frac15\Big(\frac1{m_{A_1}}+2(\hexF^{-1})_{22}+2(\hexG^{-1})_{22}\Big),
+\end{gathered}\label{eq:hex-voigt-reuss}
+\end{equation}
+with $c=(\hexA^{-1})_{33}+2(\hexF^{-1})_{33}+2(\hexG^{-1})_{33}$. The Hill estimate is
+$\Hl{\tD}=\tfrac12(\Vg{\tD}+\Rs{\tD})$. In the constants $a_i$, \eqref{eq:cub-voigt}
+reproduces the Voigt average of Lazar et al.~\cite[eq.~(158)]{Lazar2022}. Classical closed
+forms are obtained from rotation invariants, for third-order elastic
+constants~\cite[eqs.~(2.4) and~(2.6)]{Blaschke2017} and for photoelastic tensors, which
+lack the major symmetry~\cite{Ranganath1973}. Kube and Norris~\cite{Kube2026} obtain the
+Voigt and Reuss averages of cubic third-order constants in a basis of Walpole's type; here
+the blocks give both for the gradient tensor, without invariants.
+
+\subsection{Reuss below Voigt}\label{sec:averages-order}
+
+The Reuss estimate needs only $\tD$ and $\avg{\tD^{-1}}$ to be invertible, but it is the
+response of the grains under a uniform double stress only if $\tD\succ0$. We use it, and
+the Hill estimate, only then, which excludes the Fe and W data
+(section~\ref{sec:compliance-data}).
+
+\emph{Proposition.} If $\tD\succ0$, then $\Rs{\tD}\preceq\Vg{\tD}$, that is,
+$\Rs{m_3}\le\Vg{m_3}$, $\Rs{m_2}\le\Vg{m_2}$ and $\Rs{M}\preceq\Vg{M}$, with
+$\Rs{\tD}=\Vg{\tD}$ if and only if $\tD$ is isotropic.
+
+The orientation average is a positive unital linear map, so the inequality is Choi's,
+$\avg{\tD}^{-1}\preceq\avg{\tD^{-1}}$~\cite[theorem~2.3.6]{Bhatia2007}; we give the short
+proof because it also yields the case of equality.
+
+\emph{Proof.} Let $\tD_Q=(Q\star)\tD(Q\star)^{\mathsf T}$. Since $\avg{\tD_Q}=\Vg{\tD}$ and
+$\Vg{\tD}$ commutes with every $Q\star$, with $\mathbb V=(\Vg{\tD})^{-1}$,
+\begin{equation}
+\begin{aligned}
+(\Rs{\tD})^{-1}-(\Vg{\tD})^{-1}
+&=\avg{\tD_Q^{-1}-2\mathbb V+\mathbb V\tD_Q\mathbb V}\\
+&=\avg{(\mathbb V-\tD_Q^{-1})\,\tD_Q\,(\mathbb V-\tD_Q^{-1})}\succeq0,
+\end{aligned}
+\label{eq:reuss-below-voigt}
+\end{equation}
+which is the Schur complement of the average of the positive semi-definite matrix
+$\left(\begin{smallmatrix}\tD_Q&\tI\\\tI&\tD_Q^{-1}\end{smallmatrix}\right)$~\cite[theorem~1.3.3]{Bhatia2007}.
+Inversion reverses the order of positive definite maps, so $\Rs{\tD}\preceq\Vg{\tD}$, and
+since both are isotropic the order holds block by block. The integrand has the same trace for every
+$Q$, positive unless $\tD=\Vg{\tD}$; hence equality holds only for isotropic $\tD$.
+$\square$
+
+In classical elasticity the Voigt and Reuss estimates bound the effective
+stiffness~\cite{Blaschke2017,Kube2016}. Here they do not: they are the responses of the
+grains under a uniform strain gradient or a uniform double stress. The heterogeneity
+of $\tC$ alone induces gradient moduli that grow with the square of the grain
+size~\cite{Malyi2021}, for which Voigt and Reuss bounds of the gradient effective medium
+have been derived on spherical volume elements~\cite{Muhlich2012}; they are absent
+from any average of $\tD$. For third-order elastic
+constants, too, the bounds are lost~\cite{Blaschke2017}. We use them as algebraic
+estimates of the part of the effective tensor carried by $\tD$, and the Hill mean as a
+convention, empirical already in the classical case~\cite{Kube2016}.
+
+\subsection{Cubic grains}\label{sec:averages-cubic}
+
+By~\eqref{eq:cub-voigt} and~\eqref{eq:cub-reuss},
+$\Vg{M}-\Rs{M}=\bm m_h\bm m_h^{\mathsf T}/M_{hh}$ has rank at most one: one generalised
+eigenvalue of the pair $(\Rs{M},\Vg{M})$ equals one, and the two estimates agree on
+$\Hrm1$ if and only if $M_{hs}=M_{hr}=0$. This continues a classical sequence. In a cubic
+crystal the bulk part lies in a single irreducible block, so $\kappa_V=\kappa_R$, and
+$\mu_V-\mu_R$ is proportional to the square of the anisotropy $c_{11}-c_{12}-2c_{44}$~\cite[eqs.~(27)
+and~(28)]{Kube2016}. Here $\Hrm1$ lies in $\irr{T_1}$, of multiplicity three, and the
+difference is of rank one. In the hexagonal class $\Hrm1$ enters $\irr{A_2}$ and $\irr{E_1}$
+together with copies of $\Hrm3$ and $\Hrm2$, and the rank is two in general. A second
+property follows from~\eqref{eq:cub-reuss}:
+\begin{equation}
+\frac{\Rs{m_2}}{m_E}=\frac{5/2}{1+\tfrac32\,m_E\,(N^{-1})_{22}}\;\to\;\frac52
+\quad(m_E\to0),\label{eq:reuss-factor}
+\end{equation}
+where $\tfrac52=5/\dimirr{E}$: the nearly vanishing $\irr{E}$ part, two of the five
+dimensions of $\Hrm2$, dominates the harmonic mean, as $\mu_R\to\tfrac52c'$ when
+$c'=\tfrac12(c_{11}-c_{12})\to0$ in the classical case, by the Reuss modulus
+of~\cite[eq.~(28)]{Kube2016} (their eq.~(30) prints the prefactor $\tfrac53$ for $5$).
+
+Table~\ref{tab:averages} gives the estimates of the five data sets, and
+figure~\ref{fig:cubic-averages}(a) the ratios of Reuss to Voigt. The Voigt estimates of Al
+and W reproduce table~6 of Lazar et al.~\cite{Lazar2022} to $\NumTableSixMaxDiff$~eV/\AA.
+For $\Hrm3$, the ratio is $\NumAlRVmthree$ (Al), $\NumCuMEAMRVmthree$ (Cu MEAM) and
+$\NumCuEAMRVmthree$ (Cu EAM); for $\Hrm2$, $\NumAlRVmtwo$, $\NumCuMEAMRVmtwo^{\dagger}$ and
+$\NumCuEAMRVmtwo$, the Cu MEAM value set by its small $m_E$, with
+$\Rs{m_2}/m_E=\NumCuMEAMReussRatio$. The two copper tensors differ more than the Voigt and
+Reuss estimates of either: the difference belongs to the potentials, not to copper.
+
+These estimates must be weighed against the moduli induced by the heterogeneity of
+$\tC$. Malyi~\cite[eqs.~(10.21) and (10.22)]{Malyi2021} gives them, to second order in the
+anisotropy $c_{11}-c_{12}-2c_{44}$, for spherical grains of radius $R$ with independent
+orientations, through his $L^2=2R^2/5$. Taken to form~II, they have the norm of the Voigt
+estimate of $\tD$ at a grain diameter $2R$ of $\NumAlInducedCrossoverNm$~nm (Al),
+$\NumCuMEAMInducedCrossoverNm$~nm (Cu MEAM) and $\NumCuEAMInducedCrossoverNm$~nm (Cu
+EAM), and at $2R=100$~nm they exceed it by factors of about
+$\NumAlInducedRatioHundredNm$ (Al) and $\NumCuMEAMInducedRatioHundredNm$ (Cu). This is an order of
+magnitude, but it settles the scale: above a few nanometres the gradient response of a
+polycrystal is set by the heterogeneity of $\tC$, and the averages of $\tD$ describe
+the remainder.
+
+For a physical reading we define block lengths $\lblk{p}$ by
+\begin{equation}
+\tD^p\bm w=\lblk{p}^2\,(\tC\ot\kron)^p\,\bm w,\label{eq:block-lengths}
+\end{equation}
+the generalised eigenvalues of each block of $\tD$ relative to that of the separable tensor
+$\tC\ot\kron$; $\tD$ has the Helmholtz form $\ell^2\tC\ot\kron$ if and only if all
+$\lblk{p}$ equal $\ell$. Each gradient estimate is paired with the estimate of $\tC$ of the
+same kind. The pairing is a normalisation, not a joint estimate: a uniform strain and a
+uniform strain gradient cannot be imposed together~\cite[remark~1]{Lazar2022}. Since $\avg{\tC\ot\kron}=\avg{\tC}\ot\kron$ and
+$(\tC\ot\kron)^{-1}=\tC^{-1}\ot\kron$, a Helmholtz grain then has
+$\lblk{p}=\ell$ in all three. The length of Lazar and Po~\cite[eq.~(107)]{Lazar2024} is
+their dimension-weighted root mean square:
+\begin{equation}
+\lLP^2=\tfrac1{18}\,\big(\tC^{-1}\big)_{ijkl}D_{ijmklm}
+=\tfrac1{18}\tr\big((\tC\ot\kron)^{-1}\tD\big)=\tfrac1{18}\sum_p\dimirr{p}\sum\lblk{p}^2,
+\label{eq:lazar-po-length}
+\end{equation}
+the inner sum running over the lengths of block $p$. In the Voigt estimates
+(table~\ref{tab:block-lengths}, figure~\ref{fig:cubic-averages}(b)) the block lengths
+spread by factors $\NumAlVoigtLengthSpread$, $\NumCuMEAMVoigtLengthSpread$ and
+$\NumCuEAMVoigtLengthSpread$, far from a single length; $\lLP$ of the Hill estimates is
+$\NumAlHillLengthLP$, $\NumCuMEAMHillLengthLP$ and $\NumCuEAMHillLengthLP$~\AA. The Cu EAM
+lengths of Reuss exceed those of Voigt because $\mu_R<\mu_V$ in the normalisation, without
+contradicting the proposition.
+
+\subsection{Hexagonal grains}\label{sec:averages-hexagonal}
+
+By~\eqref{eq:hex-voigt-reuss} the Voigt estimate depends on $m_{B_1}+m_{B_2}$ only: by
+\eqref{eq:hex-extra}, the extra modulus multiplies a harmonic tensor of degree six, whose
+average vanishes. In the Reuss estimate only $\Rs{m_3}$ depends on it, through
+$1/m_{B_1}+1/m_{B_2}=8\sigma/(4\sigma^2-\Dhex^2)$, $\sigma=\tfrac12(m_{B_1}+m_{B_2})$:
+\begin{equation}
+\Rs{m_3}(\Dhex)=\frac{7}{c+8\sigma/(4\sigma^2-\Dhex^2)},\label{eq:hex-reuss-delta}
+\end{equation}
+even in $\Dhex$, decreasing in $|\Dhex|$ and vanishing as $|\Dhex|\to2\sigma$, where
+$\tP{B_1}$ or $\tP{B_2}$ loses positivity. No average depends on the sign of $\Dhex$,
+that is, on the family of twofold axes chosen for $\bm a$.
+
+No hexagonal gradient tensor of a crystal has been published, but granular
+micromechanics gives one. For equal spheres with normal and tangential contact
+stiffnesses $k_n$ and $k_s$, Pirmoradi et al.~\cite[eq.~(70)]{Pirmoradi2024} write the
+sixth-order tensor, in form~I with the $\kappa$ of section~\ref{sec:form-II}, as an
+integral over the contact directions weighted by their density, expanded in spherical
+harmonics~\cite[eq.~(71)]{Pirmoradi2024}. They work out isotropic, transversely isotropic,
+orthotropic, monoclinic and triclinic fabrics; the hexagonal one is our choice within their
+eq.~(71). With the axial terms $a_{20}$, $a_{40}$, $a_{60}$ and the sixfold term
+$a_{66}P_6^6(\cos\theta)\cos6\varphi$, where $P_6^6(x)=10395\,(1-x^2)^3$ is the
+unnormalised associated Legendre function, the density is invariant under
+the hexagonal group and even in the direction, so the fifth-order coupling vanishes, and
+the classical tensor, which sees only the terms of degree up to four, is transversely
+isotropic. In the basis, $a_{66}$ changes only $m_{B_1}$ and $m_{B_2}$:
+\begin{equation}
+\Dhex=\tfrac{1440}{13}\,(k_n-k_s)\,a_{66}\,\rho_cl^4,\label{eq:hex-granular}
+\end{equation}
+with $\rho_c$ the number of contacts per unit volume and $l$ the branch length; for
+uniform contacts the tensor reproduces their eq.~(74). The extra modulus is thus the
+sixfold harmonic of the contact distribution, weighted by the difference of the two
+contact stiffnesses. A positive density bounds it: for $k_s=k_n/2$, $a_{20}=0.2$ and $a_{40}=a_{60}=0$, within
+the range of their figure~3, $|\Dhex|\le\NumHexGranDeltaMax\,\sigma$, and $\Rs{m_3}$ changes
+by at most $\NumHexGranReussChangePercent\,\%$. Sweeping $\Dhex$ further on the same base
+(figure~\ref{fig:hexagonal}), $\Rs{m_3}(\sigma)/\Rs{m_3}(0)$ is $\NumHexTIReussAtSigma$, and
+$21/23=\NumHexIsoReussAtSigma$ for every isotropic base, for which $c=5/m_3$ and
+$\sigma=m_3$: the effect of the extra modulus is of second order.
+
+\begin{table}[pos=tbp]
+\caption{Voigt, Reuss and Hill estimates~\eqref{eq:cub-voigt}--\eqref{eq:cub-reuss} of the
+cubic data sets of table~\ref{tab:block-moduli}: isotropic block moduli~\eqref{eq:iso-tensor}
+(eV/\AA). Fe and W, which are not positive definite, have only the Voigt estimate. The last
+digit shown is uncertain by at most five units; $\dagger$ marks a relative uncertainty
+above 1\,\%, from the $m_E$ of Cu MEAM.}\label{tab:averages}
+\centering\small
+\input{averages}
+\end{table}
+
+\begin{table}[pos=tbp]
+\caption{Block lengths~\eqref{eq:block-lengths} of the estimates (\AA), each relative to
+$\tC\ot\kron$ with the classical stiffness of the same estimate, unlike
+table~\ref{tab:application}, which uses the stiffness of Kr\"oner's scheme throughout;
+$\lblk{1}^{\mp}$ are the two lengths of the $\Hrm1$ block, and
+$\lLP$~\eqref{eq:lazar-po-length}. The row `crystal' gives $\lLP$ of the single crystal,
+which for Al and Cu MEAM reproduces table~2 of Lazar and Po~\cite{Lazar2024}. Digits and
+$\dagger$ as in table~\ref{tab:averages}.}\label{tab:block-lengths}
+\centering\small
+\input{block_lengths}
+\end{table}
+
+\begin{figure}[pos=tbp]
+\centering
+\includegraphics{cubic_averages}
+\caption{Orientation averages of the positive definite cubic data. (a) Reuss over Voigt for
+$m_3$ ($\Hrm3$), $m_2$ ($\Hrm2$) and, in the rows $\Hrm1^{\mp}$, the lower and upper
+generalised eigenvalues of $(\Rs{M},\Vg{M})$; the upper one is exactly one. (b) Block
+lengths of the Voigt (filled) and Reuss (open) estimates, as in
+table~\ref{tab:block-lengths}, with $\lblk{1}^{\mp}$ in the rows $\Hrm1^{\mp}$, and $\lLP$ of
+Voigt (dotted lines).}\label{fig:cubic-averages}
+\end{figure}
+
+\begin{figure}[pos=tbp]
+\centering
+\includegraphics{hexagonal_extra_modulus}
+\caption{Reuss and Hill moduli $m_3$ over the Voigt modulus, against $\Dhex/\sigma$ with
+$m_{B_1,B_2}=\sigma\pm\Dhex/2$, on two bases: any isotropic tensor, and the transversely
+isotropic (TI) tensor of a granular packing with $k_s=k_n/2$ and
+$a_{20}=0.2$~\cite{Pirmoradi2024}. Shaded: the values of $\Dhex$ that a positive contact
+density gives to this packing, by~\eqref{eq:hex-granular}. Voigt does not depend on
+$\Dhex$.}\label{fig:hexagonal}
+\end{figure}

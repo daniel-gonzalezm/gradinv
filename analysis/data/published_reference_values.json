@@ -1,0 +1,20 @@
+{
+  "_description": "Published values used for comparison (not as constitutive input) or for the supplementary Fe case. Single source for analysis scripts and tests/references. Provenance of every entry: analysis/data/provenance.csv. Checked against the PDFs on 2026-10-30 (analysis/check_transcriptions.py).",
+  "lazar2022_table6": {
+    "source": "Lazar, Agiasofitou, Boehlke, Continuum Mech. Thermodyn. 34:107-136 (2022), Table 6, p. 132",
+    "units": "eV/A",
+    "abar": {
+      "Al": [-0.13862, 0.22500, 0.10877, 0.15309, 0.21632],
+      "W": [0.02387, 0.19215, 0.43264, 0.54907, 0.28799]
+    }
+  },
+  "solyaev2023_fe": {
+    "source": "Solyaev, Mech. Res. Commun. 132:104162 (2023), section 5, p. 4 (grain constants cited from Lubarda, his ref. [8])",
+    "units": "C and k in GPa; nu dimensionless; lengths in units of l0",
+    "C11": 108.0,
+    "C12": 62.0,
+    "C44": 28.3,
+    "k": 77.33,
+    "nu": 0.348
+  }
+}

@@ -1,0 +1,63 @@
+\section{Three routes to the averaged Eshelby tensor of the sphere}\label{sup:eshelby}
+
+We keep the notation of appendix~B of the paper: form~I with $\tilde\kappa_{ijk}=u_{k,ij}$,
+the constants $a_1,\dots,a_5$ and lengths $l_1$, $l_2$ of Ma et al.~\cite{Ma2018}, and the
+indices $(r,t,s)$ and $(l,m,n)$ of $\tSav$, with $s$ and $n$ those of the displacement.
+
+\emph{Fourier route.} With $\hat\chi=4\pi(\sin\xi R-\xi R\cos\xi R)/\xi^3$, the radial
+integral of appendix~B is
+\begin{equation}
+F(l)=\frac{6}{\pi R^3}\int_0^\infty\frac{(\sin\xi R-\xi R\cos\xi R)^2}{\xi^2(1+l^2\xi^2)}\,\dd\xi
+=-\frac{3\,\Phi_{\mathrm{Ma}}(l)\,\Gamma(l)}{R^3l^2},
+\end{equation}
+with $\Phi_{\mathrm{Ma}}(k)=-k(k+R)e^{-R/k}$ and $\Gamma(k)=R\cosh(R/k)-k\sinh(R/k)$
+of~\cite[eq.~(B.13)]{Ma2018}; we checked it by quadrature. In the copies of section~2 of the
+paper, the angular moments, as maps of $\Vsg$, have the blocks
+\begin{equation}
+\avg{n_rn_tn_sn_in_jn_k}:\ \Big(\frac2{35},\,0,\,\begin{pmatrix}\frac15&0\\0&0\end{pmatrix}\Big),
+\qquad
+\avg{n_rn_tn_in_j}\delta_{sk}:\ \Big(\frac2{15},\,\frac2{15},\,
+\frac1{45}\begin{pmatrix}11&2\sqrt5\\2\sqrt5&10\end{pmatrix}\Big),
+\end{equation}
+listed as $(m_3,m_2,M)$, and the tensor $\tD$ of~\cite[eq.~(2.6)]{Ma2018} has
+\begin{equation}
+\begin{gathered}
+m_3=2(a_4+a_5),\qquad m_2=2a_4-a_5,\qquad
+M_{ss}=\tfrac23(5a_1+5a_2+5a_3+3a_4+3a_5),\\
+M_{sr}=M_{rs}=-\tfrac{\sqrt5}{3}(2a_1-a_2-4a_3),\qquad
+M_{rr}=\tfrac13(2a_1-4a_2+8a_3+6a_4-3a_5).
+\end{gathered}
+\end{equation}
+So $\tSav=\mathbb P\tD$ is explicit block by block for any isotropic medium. We also assembled
+the integrand at fixed $\bm\xi$, with $K$ inverted numerically, and averaged it by quadrature.
+
+\emph{Real-space route.} With $g_{ks}(\bm x)=\int_\Omega G_{ks}(\bm x-\bm x')\,\dd^3x'$ and
+the Green function of~\cite[eqs.~(2.16)--(2.18)]{Ma2018},
+\begin{equation}
+\bar S_{rts,lmn}=\avg{\partial_r\partial_t\partial_i\partial_j\,g_{ks}}_\Omega\,D_{ijk,lmn}.
+\end{equation}
+Written with the potentials $\psi$, $\phi$ and $M$ of~\cite[eq.~(3.13)]{Ma2018}, inside the
+sphere $\phi$ and $\psi$ are radial polynomials of degrees two and four, so only the averages
+of the fourth and sixth derivatives of $M$ remain~\cite[eq.~(B.12)]{Ma2018}, which we checked by
+the divergence theorem. With $\tilde A$ and $\tilde E$ the sums over the 3 and 15 pairings of
+four and six indices~\cite[eq.~(B.11)]{Ma2018},
+\begin{equation}
+\avg{\partial_r\partial_t\partial_i\partial_j\,g_{ks}}_\Omega
+=\Big(\frac{l_2^2\,q_6(l_2)}{\mu}-\frac{l_1^2\,q_6(l_1)}{\lambda+2\mu}\Big)\tilde E_{rtijks}
+-\frac{q_4(l_2)}{\mu}\,\tilde A_{rtij}\,\delta_{ks},\qquad
+q_{2p}(k)=\frac{\Phi_{\mathrm{Ma}}(k)\Gamma(k)}{c_pR^3k^{2p-2}},
+\end{equation}
+with $c_2=5$ and $c_3=35$. In three general media this agrees with the Fourier route to
+rounding error.
+
+\emph{Their own expression.} The tensor $J_{slmn}$ of~\cite[eq.~(3.12)]{Ma2018}, with
+$\hat N_{rtslmn}=J_{slmn,rt}$~\cite[eq.~(3.10)]{Ma2018} and averaged with their eq.~(B.12),
+also gives $\tSav$ to rounding error in the same media, whereas their eq.~(3.18) differs by
+more than half its norm.
+
+\emph{Six classes.} The exact coefficients of $\tSav$ in the classes of
+Ma et al.~\cite[eq.~(3.18)]{Ma2018}, for a general isotropic medium and for the Helmholtz
+medium, are given in appendix~B of the paper. We found no published correction of their
+eq.~(3.18) among the works that cite them (two searches in OpenAlex, in October and in
+November 2026, of 36 and 35 citing works: those that could contain this average were read
+in full, the others by their abstracts).

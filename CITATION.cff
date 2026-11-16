@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, and cite the article it accompanies."
+title: "gradinv: algebra, closed-form compliance and orientation averages of cubic and hexagonal strain-gradient elasticity tensors"
+authors:
+  - family-names: "González-Monsalve"
+    given-names: "Daniel"
+    orcid: "https://orcid.org/0000-0002-3892-4722"
+    affiliation: "Department of Mechanical Engineering, Faculty of Engineering, Universidad de Concepción, Concepción, Chile"
+version: "1.0.0"
+abstract: >-
+  Code and data for the article "Algebra, closed-form compliance and orientation
+  averages of cubic and hexagonal strain-gradient elasticity tensors". The Python
+  package gradinv builds coordinate-free bases, with closed multiplication tables, of
+  the algebras of sixth-order tensors of Mindlin's strain-gradient elasticity (form II)
+  for the cubic class m-3m and the hexagonal class 6/mmm, and with them computes
+  products, inverses, Voigt, Reuss and Hill orientation averages and concentration
+  tensors on small blocks. The repository also contains the scripts that write every
+  table, figure and computed number of the article and its supplementary material, the
+  input data with the provenance of every number, and the test suite.
+license: MIT
+repository-code: "https://github.com/daniel-gonzalezm/gradinv"
+keywords:
+  - strain-gradient elasticity
+  - sixth-order tensors
+  - cubic and hexagonal symmetry
+  - tensor algebra
+  - orientation averages
+  - polycrystals

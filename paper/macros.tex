@@ -1,0 +1,93 @@
+% macros.tex -- notation of the manuscript.
+%
+% Every symbol of the paper goes through a semantic macro defined here, so that a
+% change of notation is a one-line change.
+
+% ---------------------------------------------------------------- packages
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{xcolor}
+% hyperref and amsmath are loaded by the class (cas-sc)
+% for paper/build.py, which checks that no word is set past the text block
+\AtBeginDocument{\typeout{GRADINV-TEXTWIDTH=\the\textwidth}}
+
+% ---------------------------------------------------------------- drafting aids
+% \pending{...}: outline of what a section will say; printed in a grey box while
+% \ifdraftnotes is true, invisible otherwise.
+% \pendingcite{Key}: a sentence that depends on a source not read yet; prints a
+% visible marker.
+\newif\ifdraftnotes \draftnotestrue
+\ifdefined\gradinvfinal\draftnotesfalse\fi  % set by paper/build.py --final
+\newcommand{\pending}[1]{\ifdraftnotes\par\smallskip\noindent
+  \fcolorbox{gray}{gray!8}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\small\sffamily
+  \textbf{Pending.} #1}}\par\smallskip\fi}
+\newcommand{\pendingcite}[1]{\textcolor{red}{[#1?]}}
+
+% ---------------------------------------------------------------- fields
+\newcommand{\disp}{\bm{u}}                 % displacement
+\newcommand{\strain}{\bm{\varepsilon}}     % strain
+\newcommand{\sgrad}{\bm{\eta}}             % strain gradient, form II: eta_ijk = eps_ij,k
+\newcommand{\stress}{\bm{\sigma}}          % Cauchy-like stress
+\newcommand{\dstress}{\bm{\tau}}           % double stress, tau_ijk = tau_jik
+
+% ---------------------------------------------------------------- spaces and groups
+\newcommand{\Vsg}{\mathcal{V}}             % strain-gradient space (dimension 18)
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Alg}[1]{\mathcal{A}_{#1}}     % commutant algebra of class #1
+\newcommand{\Orth}{\mathrm{O}(3)}
+\newcommand{\SOrth}{\mathrm{SO}(3)}
+\newcommand{\GL}{\mathrm{GL}(3)}
+\newcommand{\Hrm}[1]{H_{#1}}               % harmonic (irreducible O(3)) space of degree #1
+\newcommand{\Hone}[1]{H_{1}^{#1}}          % copies of H_1: s (stretch) and r (rotation) of the GL(3) chain
+\newcommand{\clsiso}{\mathrm{iso}}
+\newcommand{\clscub}{m\bar{3}m}
+\newcommand{\clshex}{6/mmm}
+
+% ---------------------------------------------------------------- tensors
+\newcommand{\tC}{\mathbb{C}}               % classical stiffness (fourth order)
+\newcommand{\tD}{\mathbb{D}}               % gradient stiffness (sixth order), D_ijmkln
+\newcommand{\tI}{\mathbb{I}}               % identity on V
+\newcommand{\tK}{\mathbb{K}}               % generic element of an algebra
+\newcommand{\tP}[1]{\mathbb{P}^{#1}}       % isotypic projector of irrep #1
+\newcommand{\tU}[3]{\mathbb{U}^{#1}_{#2#3}} % basis unit: U^p_ab U^q_cd = delta_pq delta_bc U^p_ad
+\newcommand{\tOct}{\mathbb{O}}            % cubic structure tensor sum_s e_s^{(x)4} (delta_ijkl of Lazar et al. 2022); components O_ijkl written blackboard (italic O is the group)
+\newcommand{\tHsix}{\mathbb{H}_{6}}        % hexagonal structure tensor Re(a + i n x a)^{(x)6}
+\newcommand{\tB}{\mathbb{B}}               % concentration tensor of the self-consistent scheme
+\newcommand{\tS}{\mathbb{S}}               % Eshelby tensors (application, appendix B)
+\newcommand{\tSav}{\bar{\mathbb{S}}}       % sphere average of the sixth-order Eshelby tensor (Ma's <N^>, Solyaev's <S^(6)>_v)
+\newcommand{\gr}{\mathrm{g}}               % subscript of the grain tensors in section 7
+\newcommand{\tdot}{\mathbin{\vdots}}       % triple contraction
+\newcommand{\ot}{\otimes}
+\newcommand{\kron}{\bm{\delta}}            % second-order identity
+
+\newcommand{\emb}[1]{J_{#1}}               % isometric equivariant embedding of a copy: J^p_a (E is an irrep label)
+
+\newcommand{\harm}{\mathcal{H}}            % harmonic (totally symmetric traceless) part of a third-order tensor
+\newcommand{\zhex}{\bm{z}}                 % complex vector a + i n x a of the hexagonal structure tensors
+
+% ---------------------------------------------------------------- blocks
+\newcommand{\blk}[2]{#1^{#2}}              % block of tensor #1 in irrep #2, e.g. \blk{M}{T_1}
+\newcommand{\hexA}{\mathsf{A}}             % hexagonal A_2 block (3 x 3), copies (3, s, r)
+\newcommand{\hexF}{\mathsf{F}}             % hexagonal E_1 block (4 x 4), copies (3, 2, s, r)
+\newcommand{\hexG}{\mathsf{G}}             % hexagonal E_2 block (2 x 2), copies (3, 2)
+\newcommand{\irr}[1]{#1}                   % Mulliken label of an irrep (A_2, E, T_1, ...)
+\newcommand{\Dhex}{\Delta}                 % hexagonal extra modulus, m_{B_1} - m_{B_2}
+\newcommand{\dimirr}[1]{d_{#1}}            % dimension of irrep #1
+\newcommand{\mult}[1]{n_{#1}}              % multiplicity of irrep #1 in V
+
+% ---------------------------------------------------------------- averages and lengths
+\newcommand{\Vg}[1]{#1^{\mathrm{V}}}       % Voigt
+\newcommand{\Rs}[1]{#1^{\mathrm{R}}}       % Reuss
+\newcommand{\Hl}[1]{#1^{\mathrm{H}}}       % Hill
+\newcommand{\avg}[1]{\langle #1\rangle}    % orientation average
+\newcommand{\lblk}[1]{\ell_{#1}}           % block length
+\newcommand{\lLP}{\ell_{\mathrm{LP}}}      % Lazar-Po length
+\newcommand{\linf}{\ell_{\infty}}          % large-grain limit of the self-consistent length
+\newcommand{\scres}{\rho}                  % residual of the self-consistent condition (was Delta)
+
+% ---------------------------------------------------------------- misc
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\iu}{\mathrm{i}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\sym}{\operatorname{sym}}
+\newcommand{\angstrom}{\text{\normalfont\AA}}  % unit in math mode

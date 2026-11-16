@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gradinv"
+version = "1.0.0"
+description = "Algebra, closed-form compliance and orientation averages of cubic and hexagonal strain-gradient elasticity tensors"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Daniel González-Monsalve"}]
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "sympy"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "exact: symbolic (sympy) check; run with --exact or --all",
+    "slow: Monte Carlo or other long numerical check; run with --all",
+    "core: one of the key checks of the audit map (supplement, section S2); pytest -m core runs them all, exact and slow included",
+]

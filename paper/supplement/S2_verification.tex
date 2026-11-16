@@ -1,0 +1,36 @@
+\section{Verification}\label{sup:verification}
+
+The code of the paper is a Python package with a test suite in four families:
+\emph{construction} (embeddings, multiplication tables, inverses, the hexagonal extra
+modulus and the changes of basis), \emph{sources} (comparisons with published results
+and controls of the transcribed data), \emph{averages and application} (orientation
+averages, concentration tensor, averaged Eshelby tensor and self-consistent scheme) and
+the \emph{manuscript chain} (every computed number, table and figure of the paper and of
+this supplement is regenerated from the code and compared with the files used, and the
+formulas printed in sections~2--6 and appendix~A of the paper are restated in the tests as
+printed and checked).
+
+Each comparison has one of three levels. \emph{Verification} (V) is against exact
+mathematics, computed with exact rational and algebraic arithmetic, or against an
+independent route of our own: brute force over all products, inversion or spectrum of
+the $18\times18$ matrix of the tensor on $\Vsg$, random rotations. \emph{Cross-comparison}
+(CC) is against a published result, reconstructed from the paper that gives it; where a
+printed formula does not hold, the test checks both the printed and the corrected form.
+\emph{Consistency} (C) covers limit cases (isotropic and separable tensors, isotropic
+grains), invariances and inequalities checked on random samples. No comparison is with
+measurements: the inputs are published atomistic constants.
+
+Table~\ref{tab:s-audit} maps every claim of the paper, and the illustrative application,
+to the key tests that check it. These forty-two tests are marked \texttt{core} and run with
+\texttt{pytest -m core} in about a minute and a half, including the exact and the slow
+ones; a test of the suite fails if the table names a test that is not marked, or if a
+marked test is missing from the table. The default \texttt{pytest} runs the fast
+numerical tests, and \texttt{pytest -{}-all} the whole suite in a few minutes.
+
+\newcommand{\AuditMapCaption}{Audit map of the verification. Tests are named as
+\texttt{file:function}, for the function \texttt{test\_function} of
+\texttt{tests/test\_file.py} in the code repository. Levels: V, verification; CC,
+cross-comparison with a published result; C, consistency.\label{tab:s-audit}}
+\begingroup\footnotesize\setlength{\LTcapwidth}{\linewidth}
+\input{audit_map}
+\endgroup

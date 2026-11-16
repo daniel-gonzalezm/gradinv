@@ -1,0 +1,152 @@
+\section{Intrinsic basis of the hexagonal algebra and the extra modulus}\label{sec:hexagonal}
+
+\subsection{Structure tensors and embeddings}\label{sec:hex-embeddings}
+
+Let $\bm n$ be a unit vector along the sixfold axis, $\bm a$ a unit vector along one of
+the twofold axes normal to it, and $\zhex=\bm a+\iu\,\bm n\times\bm a$. Since
+$\zhex\cdot\zhex=0$, the tensors
+\begin{equation}
+\bm h=\mathrm{Re}\,\zhex^{\ot3},\qquad \bm k=\mathrm{Im}\,\zhex^{\ot3},\qquad
+\tHsix=\mathrm{Re}\,\zhex^{\ot6}\label{eq:hex-structure}
+\end{equation}
+are totally symmetric and traceless; $|\bm h|=|\bm k|=2$, and $\tHsix$ is the
+sixth-order hexagonal structure tensor. A rotation by $\varphi$ about $\bm n$ maps $\zhex$
+to $e^{-\iu\varphi}\zhex$: by $\pi/3$ it reverses $\bm h$ and $\bm k$, by $\pi/6$ it
+maps $\bm h$ to $\bm k$ and $\bm k$ to $-\bm h$. Under $D_6$ the isotropic components
+branch without multiplicity, $\Hrm3\to\irr{A_2}\oplus\irr{B_1}\oplus\irr{B_2}\oplus
+\irr{E_1}\oplus\irr{E_2}$, $\Hrm2\to\irr{A_1}\oplus\irr{E_1}\oplus\irr{E_2}$ and
+$\Hrm1\to\irr{A_2}\oplus\irr{E_1}$, with $\irr{B_1}$ even under the half-turn about
+$\bm a$; hence
+\begin{equation}
+\Vsg=\irr{A_1}\oplus3\irr{A_2}\oplus\irr{B_1}\oplus\irr{B_2}\oplus4\irr{E_1}\oplus
+2\irr{E_2}\qquad(18=1+3+1+1+4\cdot2+2\cdot2).\label{eq:hex-decomposition}
+\end{equation}
+The model spaces are lines for the one-dimensional representations, the vectors
+$\bm v\perp\bm n$ for $\irr{E_1}$ and the traceless symmetric matrices $X$ with
+$X\bm n=\bm0$ for $\irr{E_2}$. The copies are ordered as in section~\ref{sec:cubic}:
+$\irr{A_2}=(3,s,r)$, $\irr{E_1}=(3,2,s,r)$ and $\irr{E_2}=(3,2)$. The copies $s$ and $r$
+are $\emb{s}$ and $\emb{r}$ of~\eqref{eq:iso-embeddings} applied to $\bm n$ and to
+$\bm v$, and the copies~2 are $\emb{2}$ applied to $\sqrt{3/2}\,(\bm n\ot\bm
+n-\tfrac13\kron)$ ($\irr{A_1}$), to $\sqrt2\,\sym(\bm n\ot(\bm n\times\bm v))$
+($\irr{E_1}$) and to $X$ ($\irr{E_2}$). With $\harm$ the harmonic (totally symmetric
+traceless) part, the copies inside $\Hrm3$ are
+\begin{equation}
+\begin{gathered}
+\emb{3}^{A_2}=\sqrt{\tfrac52}\,\harm(\bm n\ot\bm n\ot\bm n),\qquad
+\emb{}^{B_1}=\tfrac12\bm h,\qquad \emb{}^{B_2}=\tfrac12\bm k,\\
+\emb{3}^{E_1}\bm v=\tfrac{\sqrt{15}}{2}\,\harm(\bm n\ot\bm n\ot\bm v),\qquad
+(\emb{3}^{E_2}X)_{ijk}=\sqrt3\,\big[n_i\,\epsilon_{jpq}n_pX_{qk}\big]_{(ijk)}.
+\end{gathered}\label{eq:hex-embeddings}
+\end{equation}
+$\emb{3}^{A_2}$ is $\emb{h}$ of~\eqref{eq:cub-embeddings} with $\tOct$ replaced by
+$\bm n^{\ot4}$ and $\bm v=\bm n$. The 18 embedded basis vectors have the identity as
+Gram matrix.
+
+\subsection{The algebra and the hexagonal tensor}\label{sec:hex-algebra}
+
+$\Alg{\clshex}$ has dimension $1+9+1+1+16+4=32$, with 22 symmetric elements
+(table~\ref{tab:algebras}); both numbers equal the dimensions of the commutant of $D_6$
+computed directly. The
+isotropic units split as
+\begin{equation}
+\tP{3}=\tU{A_2}{3}{3}+\tP{B_1}+\tP{B_2}+\tU{E_1}{3}{3}+\tU{E_2}{3}{3},\quad
+\tP{2}=\tP{A_1}+\tU{E_1}{2}{2}+\tU{E_2}{2}{2},\quad
+\tU{1}{a}{b}=\tU{A_2}{a}{b}+\tU{E_1}{a}{b},\label{eq:hex-iso-units}
+\end{equation}
+with $a,b\in\{s,r\}$ in the last one. A hexagonal gradient tensor is
+\begin{equation}
+\tD=\sum_{a,b}\hexA_{ab}\tU{A_2}{a}{b}+\sum_{a,b}\hexF_{ab}\tU{E_1}{a}{b}
++\sum_{a,b}\hexG_{ab}\tU{E_2}{a}{b}+m_{A_1}\tP{A_1}+m_{B_1}\tP{B_1}+m_{B_2}\tP{B_2},
+\label{eq:hex-tensor}
+\end{equation}
+with symmetric blocks $\hexA$ ($3\times3$), $\hexF$ ($4\times4$) and $\hexG$ ($2\times2$):
+$6+10+3+3=22$ block moduli. Its eigenvalues are those of $\hexA$, $m_{A_1}$, $m_{B_1}$
+and $m_{B_2}$, simple, and those of $\hexF$ and $\hexG$, double. By~\eqref{eq:hex-iso-units},
+$\tD$ is isotropic if and only if
+\begin{equation}
+\begin{gathered}
+m_{B_1}=m_{B_2}=\hexA_{33}=\hexF_{33}=\hexG_{33},\qquad m_{A_1}=\hexF_{22}=\hexG_{22},
+\qquad \hexA_{ab}=\hexF_{ab}\quad(a,b\in\{s,r\}),\\
+\hexA_{3s}=\hexA_{3r}=\hexF_{32}=\hexF_{3s}=\hexF_{3r}=\hexF_{2s}=\hexF_{2r}=\hexG_{32}=0,
+\end{gathered}\label{eq:hex-isotropy}
+\end{equation}
+seventeen conditions, and then $m_3=m_{B_1}$, $m_2=m_{A_1}$ and the $(s,r)$ blocks are
+$M$.
+
+\subsection{Transverse isotropy and the extra modulus}\label{sec:hex-extra}
+
+All the units except $\tP{B_1}$ and $\tP{B_2}$ commute with every rotation about
+$\bm n$, and so does their sum, which is the projector onto the part of $\Hrm3$ of azimuthal order $m=\pm3$ (the
+span of $\bm h$ and $\bm k$). The transversely isotropic tensors therefore form the
+subalgebra in which $\tP{B_1}$ and $\tP{B_2}$ enter only through their sum, of dimension
+31 (21 symmetric), spanned by the 31 tensors of Monchiet and
+Bonnet~\cite[eqs.~(32)--(33)]{Monchiet2013}; a hexagonal tensor is transversely
+isotropic if and only if $\Dhex:=m_{B_1}-m_{B_2}=0$. Since $\tP{B_1}=\tfrac14\bm h\ot\bm
+h$, $\tP{B_2}=\tfrac14\bm k\ot\bm k$ and $\mathrm{Re}\,u\,\mathrm{Re}\,w-\mathrm{Im}\,u\,
+\mathrm{Im}\,w=\mathrm{Re}\,(uw)$,
+\begin{equation}
+\tP{B_1}-\tP{B_2}=\tfrac14\,\tHsix,\qquad
+\Dhex=m_{B_1}-m_{B_2}=\tfrac14\,\langle\tD,\tHsix\rangle=\tfrac14\,D_{ijmkln}\,
+(\tHsix)_{ijmkln}.\label{eq:hex-extra}
+\end{equation}
+The single modulus that distinguishes the class $\clshex$ from transverse isotropy is
+thus the splitting of the $m=\pm3$ part of $\Hrm3$ into its $\irr{B_1}$ and $\irr{B_2}$
+parts, and, up to a factor, the component of $\tD$ along the hexagonal structure tensor:
+since $|\tHsix|^2=32$, the orthogonal projection of $\tD$ on $\tHsix$ is
+$\tfrac18\Dhex\,\tHsix$. A harmonic tensor
+invariant under the rotation by $\pi/3$ about $\bm n$ has only components with
+$m\equiv0\pmod 6$, so the $D_6$-invariant harmonic tensors of degree below six are
+axially symmetric. This is why a classical elasticity tensor of class $\clshex$, whose
+harmonic components have degree at most four, is transversely isotropic, whereas the
+symmetric gradient tensors, whose space contains the degree-six component of
+$\Hrm3\ot\Hrm3$, need not be. The rotation by $\pi/6$ about $\bm n$ exchanges $\tP{B_1}$ and
+$\tP{B_2}$ and reverses $\Dhex$, so the sign of $\Dhex$ refers to the family of twofold
+axes that contains $\bm a$. A separable tensor $\tC\ot\bm L$, with $\tC$ hexagonal and
+$\bm L=l_1\bm n\ot\bm n+l_2(\kron-\bm n\ot\bm n)$, has $\Dhex=0$. Auffray et
+al.~\cite[section~3.3.5]{Auffray2013} write the hexagonal matrix as a transversely
+isotropic matrix plus $\eta_{\mathrm A}A_c$, with a fixed matrix $A_c$; in our basis
+$\eta_{\mathrm A}A_c$ is $4\eta_{\mathrm A}\,\tP{B_1}$, so that $\Dhex=4\eta_{\mathrm A}$ when both are referred to the same
+$\bm e_1$.
+
+\subsection{The matrix components of Auffray et al.}\label{sec:hex-auffray}
+
+Auffray et al.~\cite[eq.~(10) and table~2]{Auffray2013} use an orthonormal basis of
+$\Vsg$ in which the hexagonal matrix is block diagonal, with blocks
+$A^{(11)}+\eta_{\mathrm A}A_c$, $A^{(11)}$, $H^{(6)}+f(J^{(4)})$ and $J^{(4)}$ of sizes 5, 5, 5 and
+3~\cite[section~3.3.5]{Auffray2013}. With $\bm e_3=\bm n$ and $\bm e_1=\bm a$, the
+change to our basis is orthogonal and respects these blocks:
+\begin{equation}
+\begin{gathered}
+A^{(11)}+\eta_{\mathrm A}A_c=W_1\begin{pmatrix}m_{B_1}&\\&\hexF\end{pmatrix}W_1^{\mathsf T},\qquad
+A^{(11)}=W_1'\begin{pmatrix}m_{B_2}&\\&\hexF\end{pmatrix}W_1'^{\mathsf T},\\
+H^{(6)}+f(J^{(4)})=W_3\begin{pmatrix}\hexA&\\&\hexG\end{pmatrix}W_3^{\mathsf T},\qquad
+J^{(4)}=W_4\begin{pmatrix}m_{A_1}&\\&\hexG\end{pmatrix}W_4^{\mathsf T},\\[2pt]
+W_1=\frac1{30}\begin{pmatrix}
+15&-3\sqrt{15}&0&6\sqrt{15}&0\\
+-15&-\sqrt{15}&10\sqrt3&2\sqrt{15}&10\sqrt3\\
+-15\sqrt2&-\sqrt{30}&-5\sqrt6&2\sqrt{30}&-5\sqrt6\\
+0&4\sqrt{15}&-10\sqrt3&2\sqrt{15}&10\sqrt3\\
+0&4\sqrt{30}&5\sqrt6&2\sqrt{30}&-5\sqrt6\end{pmatrix},\quad
+W_4=\frac16\begin{pmatrix}0&2\sqrt3&-2\sqrt6\\-3\sqrt2&2\sqrt3&\sqrt6\\
+3\sqrt2&2\sqrt3&\sqrt6\end{pmatrix},\\[2pt]
+W_3=\frac1{30}\begin{pmatrix}
+6\sqrt{10}&6\sqrt{15}&0&0&0\\
+-3\sqrt{10}&2\sqrt{15}&10\sqrt3&-5\sqrt6&10\sqrt3\\
+-6\sqrt5&2\sqrt{30}&-5\sqrt6&-10\sqrt3&-5\sqrt6\\
+-3\sqrt{10}&2\sqrt{15}&10\sqrt3&5\sqrt6&-10\sqrt3\\
+-6\sqrt5&2\sqrt{30}&-5\sqrt6&10\sqrt3&5\sqrt6\end{pmatrix},
+\end{gathered}\label{eq:hex-auffray}
+\end{equation}
+where $W_1'$ is $W_1$ with the sign of its first column reversed, which changes only the
+orientation of $\emb{}^{B_2}$. The rows follow their basis
+vectors (111, 221, 122, 331, 133), (222, 112, 121, 332, 233), (333, 113, 131, 223, 232)
+and (123, 132, 231), and the columns our copies, $\irr{B_1}$ or $\irr{B_2}$ before
+$\irr{E_1}$ and $\irr{A_2}$ or $\irr{A_1}$ before $\irr{E_2}$. With $\bm b=\bm n\times\bm a$,
+the $\irr{E_1}$ columns take $\bm v=\bm a$ in the first block and $\bm v=\bm b$ in the
+second, and the $\irr{E_2}$ columns take $X=\sqrt2\,\sym(\bm a\ot\bm b)$ in the third and
+$X=(\bm a\ot\bm a-\bm b\ot\bm b)/\sqrt2$ in the fourth. Since the $W$ are
+orthogonal, \eqref{eq:hex-auffray} gives both directions, for instance
+$\mathrm{diag}(m_{B_2},\hexF)=W_1'^{\mathsf T}A^{(11)}W_1'$, and in particular $m_{A_1}=j_{22}-j_{23}$ and $\hexG_{32}=\tfrac{\sqrt2}{3}(-j_{11}-j_{12}+j_{22}
++j_{23})$. Each of their blocks thus mixes two of our irreducible components:
+$\irr{B_1}$ or $\irr{B_2}$ with $\irr{E_1}$ in the first two, $\irr{A_2}$ or
+$\irr{A_1}$ with $\irr{E_2}$ in the last two.

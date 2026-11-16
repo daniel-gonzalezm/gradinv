@@ -1,0 +1,90 @@
+% main.tex -- manuscript for the European Journal of Mechanics A/Solids, in Elsevier's
+% CAS single-column class (cas-sc, not stored in the repository: build with
+%   python paper/build.py --cls <folder with cas-sc.cls and cas-common.sty>).
+\documentclass[a4paper,fleqn]{cas-sc}
+
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{amsthm}
+\input{macros}
+\input{paper_numbers}
+
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[proposition]{Remark}
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+\shorttitle{Algebra and averages of cubic and hexagonal strain-gradient tensors}
+\shortauthors{D. Gonz\'alez-Monsalve}
+
+\title[mode=title]{Algebra, closed-form compliance and orientation averages of cubic and
+hexagonal strain-gradient elasticity tensors}
+
+\author[1]{Daniel Gonz\'alez-Monsalve}[orcid=0000-0002-3892-4722]
+\cormark[1]
+\ead{danielgonzalezm@udec.cl}
+
+\affiliation[1]{organization={Department of Mechanical Engineering, Faculty of Engineering,
+  Universidad de Concepci\'on},
+  addressline={Edmundo Larenas 219},
+  postcode={4070409},
+  city={Concepci\'on},
+  country={Chile}}
+
+\cortext[1]{Corresponding author}
+
+\begin{abstract}
+% at most 250 words (EJM A/Solids), no references or undefined abbreviations;
+% counted by tests/test_manuscript.py
+Strain-gradient elasticity tensors of crystals are computed from interatomic
+potentials, but closed-form algebras for their products, inverses and averages have been
+published only for isotropy and transverse isotropy. We construct coordinate-free bases,
+with closed multiplication tables, of the algebras of cubic ($m\bar3m$) and hexagonal
+($6/mmm$) sixth-order tensors on the strain-gradient space of Mindlin's form~II; their
+symmetric elements are the gradient tensors, with 11 and 22 constants, and every operation
+reduces to blocks of size at most four. The hexagonal modulus absent from
+transverse isotropy is proportional to the component of the tensor along the sixth-order
+hexagonal structure tensor; in a granular packing it measures the sixfold harmonic of the
+contact distribution. We give in closed form the gradient compliance, with block-wise
+positivity conditions and changes of basis to published parametrisations, and the
+Voigt, Reuss and Hill estimates for untextured polycrystals, with Reuss below Voigt except
+for isotropic grains. These estimates omit the moduli induced by grain heterogeneity,
+which dominate beyond a few nanometres. The formulas are applied to atomistic data of
+cubic metals and illustrated with a self-consistent scheme, correcting a published sphere
+average of the sixth-order Eshelby tensor.
+\end{abstract}
+
+% 1 to 7 keywords (EJM A/Solids); the highlights go in a separate file at submission
+\begin{keywords}
+strain-gradient elasticity \sep sixth-order tensors \sep cubic symmetry \sep
+hexagonal symmetry \sep tensor algebra \sep orientation averages \sep polycrystals
+\end{keywords}
+
+\maketitle
+
+\input{sections/01_introduction}
+\input{sections/02_setting}
+\input{sections/03_cubic}
+\input{sections/04_hexagonal}
+\input{sections/05_compliance}
+\input{sections/06_averages}
+\input{sections/07_application}
+\input{sections/08_conclusions}
+
+\appendix
+% Elsevier numbers the equations of appendix A as (A.1), (A.2), ...
+\counterwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\input{sections/A_lazar_copies}
+\input{sections/B_eshelby}
+
+\input{sections/declarations}
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,50 @@
+\section{Solyaev's iron example}\label{sup:fe}
+
+Solyaev~\cite[section~5]{Solyaev2023} applies his scheme to iron grains with
+$C_{11}=108$, $C_{12}=62$ and $C_{44}=28.3$~GPa, a grain gradient tensor
+$\ell_0^2\,\tC_\gr\ot\kron$ (his eq.~(17)) and the medium $\ell^2\tC\ot\kron$ (his
+eq.~(19)), lengths in units of $\ell_0$, and reports that $\ell$ grows with the grain size
+towards about $1.9\,\ell_0$ (his figure~2), an increase he attributes to the misorientation of
+the grains. We read eqs.~(17) and~(19) in form~II, as the Helmholtz model of his sources
+(section~7 of the paper), solved his minimisation problem at the eleven grain sizes of his
+figure~2, $2R/\ell_0=10$--$100$, and obtained:
+\begin{itemize}
+\item with the exact averaged Eshelby tensor (appendix~B of the paper):
+$\ell=\NumFeExactEllMin$--$\NumFeExactEllMax\,\ell_0$,
+$\nu=\NumFeExactNuMin$--$\NumFeExactNuMax$ and $\scres\le\NumFeExactResidualMax$;
+\item with any of the three averaged tensors (the exact one, that of Ma et al.\ and his
+printed eq.~(21)): $\ell=\NumFeAllEllMin$--$\NumFeAllEllMax\,\ell_0$ and
+$\scres\le\NumFeAllResidualMax$;
+\item in the closed large-grain limit, $\linf=\NumFeLimEll\,\ell_0$ and Kr\"oner's
+$\nu_{\mathrm K}=\NumFeKronerNu$.
+\end{itemize}
+The reason is structural. For an isotropic grain, the medium with the grain's $\nu$ and
+$\ell=\ell_0$ gives
+\begin{equation}
+\tD=\tD_\gr,\qquad \tB=\tI,\qquad \scres=0
+\end{equation}
+for every $R$ and any averaged Eshelby tensor, and his iron is nearly isotropic: its Zener
+ratio is $\NumFeZener$, and the Voigt and Reuss shear moduli are $\NumFeMuVoigt$ and
+$\NumFeMuReuss$~GPa. An assumed, strongly anisotropic grain ($C_{11}=230$, $C_{12}=135$,
+$C_{44}=117$~GPa, Zener ratio $\NumFeAnisoZener$) still gives
+$\ell=\NumFeAnisoEllMin$--$\NumFeAnisoEllMax\,\ell_0$ for $2R/\ell_0=10$, $20$, $50$ and
+$100$.
+
+We then tried $\NumFeMixedCount$ mixed readings: grain or medium read literally in form~I
+(his index order) and the other in form~II, with each of the three averaged tensors and with
+his or Ma's fourth-order average (his eq.~(20) writes $s_2I_{ijkl}$ with
+$I_{ijkl}=\tfrac12(\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})$, half the term
+$s_2(\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})$ of~\cite[eq.~(3.18)]{Ma2018}). They show a
+similar trend, but none reproduces his figure~2: the root mean square difference in
+$\ell/\ell_0$ is $\NumFeMixedRmsMin$--$\NumFeMixedRmsMax$, against a digitisation uncertainty
+of about $0.01$. They also move $\ell$ away from $\ell_0$ for an isotropic grain, for which the
+coherent reading is exact, which points to a mismatch between grain and medium rather than to
+misorientation.
+
+Two further remarks. His eq.~(22) prints the five $B$ terms without squares; read so, the
+radicand is negative in parts of the domain, and we square every term. His classical
+$\nu=0.348$ and $\mu=26.16$~GPa agree with each other and with his bulk modulus, but not, to the
+digits printed, with Kr\"oner's estimate, $\nu_{\mathrm K}=\NumFeKronerNu$; he does not say how
+they were obtained. We could not determine what was
+computed for his figure~2; the implementation of section~7 is validated instead by a second,
+independent implementation in components and by the limiting cases listed in section~S2.

@@ -1,0 +1,42 @@
+\section{Index forms of the basis units}\label{sup:index}
+
+The units of sections~2--4 are compositions of maps built from $\kron$, $\epsilon$ and
+the structure tensors. This section expands them in fixed tensors given by their
+components, with the row indices $(i,j,m)$ and the column indices $(k,l,n)$ of
+$D_{ijmkln}$. The isotropic tensors are those of Monchiet and
+Bonnet~\cite[eq.~(2.3)]{Monchiet2011a}, with
+$I_{ijkl}=\tfrac12(\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})$:
+$(\mathbb T^{\mathrm{iso}}_1)_{ijmkln}=\delta_{ij}\delta_{kl}\delta_{mn}$,
+$(\mathbb T^{\mathrm{iso}}_2)=I_{ijkl}\delta_{mn}$,
+$(\mathbb T^{\mathrm{iso}}_3)=I_{ijmn}\delta_{kl}$,
+$(\mathbb T^{\mathrm{iso}}_4)=I_{klmn}\delta_{ij}$,
+$(\mathbb T^{\mathrm{iso}}_5)=\tfrac12(I_{ijkn}\delta_{ml}+I_{ijln}\delta_{mk})$ and
+$(\mathbb T^{\mathrm{iso}}_6)=\tfrac12(I_{klin}\delta_{jm}+I_{kljn}\delta_{im})$.
+The cubic ones are the groups of eq.~(40) of Lazar et al.~\cite{Lazar2022}, split into a
+tensor and its transpose where a group lacks major symmetry. With
+$\tOct^{(6)}=\sum_s\bm e_s^{\ot6}$,
+$(\mathbb G_6)_{ijmkln}=\delta_{ik}\tOct_{jlmn}+\delta_{il}\tOct_{jkmn}+\delta_{jk}\tOct_{ilmn}
++\delta_{jl}\tOct_{ikmn}$,
+$(\mathbb G_7)=\delta_{km}\tOct_{ijln}+\delta_{lm}\tOct_{ijkn}$,
+$(\mathbb G_8)=\delta_{mn}\tOct_{ijkl}$,
+$(\mathbb G_9)=\delta_{kl}\tOct_{ijmn}$,
+$(\mathbb G_{10})=\delta_{im}\tOct_{jkln}+\delta_{jm}\tOct_{ikln}$ and
+$\mathbb G_{11}=\tOct^{(6)}$.
+Only the units $\tU{p}{a}{b}$ with $a$ not after $b$ in the order of the copies are
+written; $\tU{p}{b}{a}$ is the transpose, obtained by exchanging $\mathbb
+T^{\mathrm{iso}}_3$ and $\mathbb T^{\mathrm{iso}}_4$ and each $\mathbb G_k$ with
+$\mathbb G_k^{\mathsf T}$; the other tensors are symmetric.
+
+For the hexagonal class, the tensors $\mathbb T^{\mathrm{ti}}_1,\dots,\mathbb
+T^{\mathrm{ti}}_{31}$ of Monchiet and Bonnet~\cite[eqs.~(32)--(33)]{Monchiet2013},
+written with $\bm n$ and $\kron-\bm n\ot\bm n$, span the transversely isotropic
+subalgebra (section~4.3 of the paper). In each of its blocks they are matrix units in a basis of
+copies that is not orthonormal: in our block $p$ the tensor $\mathbb
+T^{\mathrm{ti}}_{g_p(c,d)}$ is $P_pE_{cd}P_p^{-1}$, with $E_{cd}$ the matrix unit and the
+rows of $P_p$ labelled by our copies. The hexagonal units then follow from the three
+matrices $P_p$ (each fixed up to a factor) and $\tHsix$. Every expansion below is
+generated from the package and checked to rebuild its unit exactly.
+
+% The % below matters: the generated file ends with a display, and a space after
+% it (with the one that follows this file) would set an empty line before S2.
+\input{index_forms}%

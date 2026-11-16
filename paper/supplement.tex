@@ -1,0 +1,62 @@
+% supplement.tex -- supplementary material, one PDF in the same class as the manuscript
+% (Elsevier's cas-sc). Built by paper/build.py together with main.tex.
+\documentclass[a4paper,fleqn]{cas-sc}
+
+\usepackage[numbers,sort&compress]{natbib}
+\input{macros}
+\input{paper_numbers}
+\usepackage{longtable,pdflscape}
+\allowdisplaybreaks  % long generated align* blocks of section S1
+
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\counterwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+\shorttitle{Supplementary material}
+\shortauthors{D. Gonz\'alez-Monsalve}
+
+\title[mode=title]{Supplementary material for ``Algebra, closed-form compliance and
+orientation averages of cubic and hexagonal strain-gradient elasticity tensors''}
+
+\author[1]{Daniel Gonz\'alez-Monsalve}[orcid=0000-0002-3892-4722]
+\cormark[1]
+\ead{danielgonzalezm@udec.cl}
+
+\affiliation[1]{organization={Department of Mechanical Engineering, Faculty of Engineering,
+  Universidad de Concepci\'on},
+  addressline={Edmundo Larenas 219},
+  postcode={4070409},
+  city={Concepci\'on},
+  country={Chile}}
+
+\cortext[1]{Corresponding author}
+
+\begin{abstract}
+This supplement gives the basis units in components, the map of the key tests, the
+provenance of every input number, the compliance blocks of the data sets, the
+self-consistent estimate against grain size, the iron example of Solyaev and three
+routes to the averaged Eshelby tensor of the sphere. Every table, figure and number in it
+is written by the scripts of the public code (\url{https://github.com/daniel-gonzalezm/gradinv}).
+\end{abstract}
+
+\maketitle
+
+\input{supplement/S1_index_forms}
+\input{supplement/S2_verification}
+\input{supplement/S3_provenance}
+\input{supplement/S4_compliance}
+\input{supplement/S5_selfconsistent}
+\input{supplement/S6_fe_case}
+\input{supplement/S7_eshelby_routes}
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

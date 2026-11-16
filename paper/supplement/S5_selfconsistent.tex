@@ -1,0 +1,29 @@
+\section{Self-consistent estimate against grain size}\label{sup:selfconsistent}
+
+Figure~\ref{fig:s-selfconsistent} shows the minimisers of the residual $\scres$ of section~7
+of the paper for grain radii $R=2.5$--$500$~\AA, with the exact averaged Eshelby tensor of
+appendix~B, with seven and eight terms. The residual was evaluated on a grid in $(\nu,\ell)$
+and every local minimum was refined by the Nelder--Mead method: each of the $\NumSCCases$
+cases has a single minimum, inside the grid. Both unknowns vary smoothly with $R$
+and tend to the closed limit of the paper: $\nu$ to Kr\"oner's value and $\ell$ to $\linf$,
+within $\NumSCNearLimitPercent$\,\% from $2R=2$~nm on. The normalised residual
+$\scres/|\Phi|$ hardly depends on $R$: the mismatch is not a size effect but the
+inability of a one-parameter medium to match the block lengths of the grain. In the
+seven-term solutions the omitted condition $B_2'=3$ is missed by up to
+$\NumSCSixthSolutionMaxPercent$\,\%, less for larger grains. Grains whose radius is below the
+lattice parameter (shaded) are not physical and are shown only to display the trend; there
+the minimisers depart most from the limit, which involves only the Voigt estimate of the
+grain. The Cu MEAM tensor is nearly singular (section~5 of the paper), but the scheme
+does not invert it: moving $D_{16,16}$ and $D_{16,17}$, which fix $m_E$, by the rounding of
+their published digits changes $\ell$ by less than $\NumCuMEAMSensitivityEll$~\AA, at $R=5$~\AA\ and in the limit.
+
+\begin{figure}[pos=htbp]
+\centering
+\includegraphics{selfconsistent_fcc}
+\caption{Self-consistent estimate against the grain diameter $2R$: (a) effective length
+$\ell$, (b) Poisson's ratio $\nu$ and (c) normalised residual $\scres/|\Phi|$, with seven
+terms (solid lines, filled markers) and eight (dashed lines, open markers). Dotted lines:
+the closed large-grain limit $\linf$ (seven terms) in (a) and Kr\"oner's $\nu_{\mathrm K}$
+in (b). Shaded: radius below the lattice parameter of Al, the largest of the three
+($R<a$), not physical.}\label{fig:s-selfconsistent}
+\end{figure}

@@ -1,0 +1,111 @@
+\section{Intrinsic basis of the cubic algebra}\label{sec:cubic}
+
+\subsection{Branching and embeddings}\label{sec:cubic-embeddings}
+
+Let $\bm e_1,\bm e_2,\bm e_3$ be unit vectors along the cube axes and
+$\tOct=\sum_{s}\bm e_s\ot\bm e_s\ot\bm e_s\ot\bm e_s$ the cubic structure tensor (the
+$\delta_{ijkl}$ of Lazar et al.~\cite[eq.~(37)]{Lazar2022}). Under the octahedral group
+the isotropic components branch without multiplicity,
+$\Hrm3\to\irr{A_2}\oplus\irr{T_1}\oplus\irr{T_2}$, $\Hrm2\to\irr{E}\oplus\irr{T_2}$ and
+$\Hrm1\to\irr{T_1}$ (Mulliken labels), so that
+\begin{equation}
+\Vsg=3\irr{T_1}\oplus2\irr{T_2}\oplus\irr{E}\oplus\irr{A_2}\qquad(18=3\cdot3+2\cdot3+2+1).
+\label{eq:cub-decomposition}
+\end{equation}
+As model spaces we take the vectors for $\irr{T_1}$, the symmetric matrices with
+$\tOct:X=0$ (zero diagonal in the cube axes) for $\irr{T_2}$, the traceless symmetric
+matrices with $\tOct:X=X$ (diagonal) for $\irr{E}$, and a line for $\irr{A_2}$. The copies
+are ordered by decreasing degree and $\mathcal S$ before $\mathcal R$:
+$\irr{T_1}=(h,s,r)$ and $\irr{T_2}=(3,2)$. The copies $s$ and $r$ of $\irr{T_1}$ are
+$\emb{s}$ and $\emb{r}$ of~\eqref{eq:iso-embeddings}; copy~2 of $\irr{T_2}$ and the
+$\irr{E}$ component are $\emb{2}$ restricted to their model spaces. The copies inside
+$\Hrm3$ are
+\begin{equation}
+\begin{gathered}
+(\emb{h}v)_{ijk}=\sqrt{\tfrac52}\Big[\tOct_{ijkl}v_l
+-\tfrac15(v_i\delta_{jk}+v_j\delta_{ik}+v_k\delta_{ij})\Big],\\
+(\emb{3}X)_{ijk}=\sqrt3\,\big[\epsilon_{ilp}X_{pq}\tOct_{lqjk}\big]_{(ijk)},
+\end{gathered}
+\label{eq:cub-embeddings}
+\end{equation}
+where $(\cdot)_{(ijk)}$ is total symmetrisation, and $\irr{A_2}$ is the line of $\Hrm3$
+annihilated by $h\mapsto \tOct_{ijpq}h_{pqk}$, spanned by the symmetrised
+$\bm e_1\ot\bm e_2\ot\bm e_3$. Thus $\emb{h}v$ is a positive multiple of the harmonic part of $\tOct\cdot v$, and $\emb{3}$ is oriented so that the separable tensor
+$\tOct_{ijkl}\delta_{mn}$ (the $a_8$ term of~\cite[eq.~(40)]{Lazar2022}) has the
+positive coupling $N_{32}=\sqrt2/3$ between the two copies of $\irr{T_2}$.
+
+\subsection{The algebra and the cubic tensor}\label{sec:cubic-algebra}
+
+$\Alg{\clscub}$ has dimension $9+4+1+1=15$, with 11 symmetric elements
+(table~\ref{tab:algebras}); its units $\tU{T_1}{a}{b}$ ($a,b\in\{h,s,r\}$),
+$\tU{T_2}{a}{b}$ ($a,b\in\{3,2\}$), $\tP{E}$ and $\tP{A_2}$ obey~\eqref{eq:table}, and the
+dimensions agree with those of the commutant computed directly from the group action. The
+units are tied to the isotropic ones by
+\begin{equation}
+\tP{3}=\tU{T_1}{h}{h}+\tU{T_2}{3}{3}+\tP{A_2},\qquad
+\tP{2}=\tU{T_2}{2}{2}+\tP{E},\qquad
+\tU{1}{a}{b}=\tU{T_1}{a}{b}\quad(a,b\in\{s,r\}),\label{eq:cub-iso-units}
+\end{equation}
+with $\tP{E}=\emb{2}\,\tOct\,\emb{2}^{\mathsf T}$, where $\tOct$ projects a traceless
+symmetric matrix onto its diagonal part. Hence $\tU{T_2}{2}{2}=\tP{2}-\tP{E}$ and
+$\tP{A_2}=\tP{3}-\tU{T_1}{h}{h}-\tU{T_2}{3}{3}$, and every unit is a composition of maps
+built from $\kron$, $\epsilon$ and $\tOct$; their expansions in components are in the
+supplementary material. A cubic gradient tensor is
+\begin{equation}
+\tD=\sum_{a,b}M_{ab}\,\tU{T_1}{a}{b}+\sum_{a,b}N_{ab}\,\tU{T_2}{a}{b}
++m_E\,\tP{E}+m_A\,\tP{A_2},\label{eq:cub-tensor}
+\end{equation}
+with $M=M^{\mathsf T}\in\mathbb R^{3\times3}$ and $N=N^{\mathsf T}\in\mathbb R^{2\times2}$,
+that is, $6+3+1+1=11$ block moduli. By~\eqref{eq:block-rules} its eigenvalues are those of
+$M$ and of $N$, each threefold, $m_E$, twofold, and $m_A$, simple: the seven distinct
+eigenvalues (one simple, one double, five threefold) that Lazar et
+al.~\cite{Lazar2022} obtain by reordering the $18\times18$ matrix into diagonal blocks of
+sizes five and three. Each of their blocks of size five joins the $\irr{T_1}$ and
+$\irr{T_2}$ parts, which the basis separates into blocks of sizes three and two. Products, inverses and
+positive definiteness follow from~\eqref{eq:block-rules}; section~\ref{sec:compliance}
+states them. By~\eqref{eq:cub-iso-units}, $\tD$ is isotropic if and only if
+\begin{equation}
+M_{hh}=N_{33}=m_A,\qquad N_{22}=m_E,\qquad M_{hs}=M_{hr}=N_{32}=0,
+\label{eq:cub-isotropy}
+\end{equation}
+and then $m_3=m_A$, $m_2=m_E$ and the $(s,r)$ part of $M$ is the isotropic block. These
+six linear conditions match the six conditions $a_6=\dots=a_{11}=0$
+of~\cite[eq.~(81)]{Lazar2022}.
+
+\subsection{The constants of Lazar et al.}\label{sec:cubic-lazar}
+
+Lazar et al.~\cite[eq.~(40)]{Lazar2022} write the cubic tensor with eleven constants:
+$a_1,\dots,a_5$ multiply Mindlin's isotropic tensors and $a_6,\dots,a_{11}$ tensors built
+from $\kron$, $\tOct$ and $\sum_s\bm e_s^{\ot6}$. Their tensor lies in $\Alg{\clscub}$, and
+its block moduli are obtained from~\eqref{eq:block-rules}. The moduli $m_E$ and $m_A$ are
+the isotropic $m_2$ and $m_3$ of~\eqref{eq:iso-lazar} and do not depend on the anisotropic
+constants; with $m_3$, $m_2$ and $M^{\clsiso}_{ab}$ the isotropic moduli
+of~\eqref{eq:iso-lazar}, the other blocks are
+\begin{equation}
+\begin{aligned}
+M_{hh}&=m_3+\tfrac{12}{5}(a_6+a_7)+\tfrac35a_8+\tfrac25a_{11},&
+N_{33}&=m_3+\tfrac43(a_6+a_7)+\tfrac13a_8,\\
+M_{ss}&=M^{\clsiso}_{ss}+\tfrac{44}{15}(a_6+a_7)+\tfrac{11}{15}a_8+2a_9+4a_{10}+\tfrac35a_{11},&
+N_{22}&=m_2+\tfrac23a_6-\tfrac43a_7+\tfrac23a_8,\\
+M_{rr}&=M^{\clsiso}_{rr}+\tfrac23a_6-\tfrac43a_7+\tfrac23a_8,&
+N_{32}&=\tfrac{\sqrt2}{3}(-2a_6+a_7+a_8),\\
+M_{sr}&=M^{\clsiso}_{sr}+\sqrt5\big[-\tfrac4{15}a_6+\tfrac2{15}(a_7+a_8)+\tfrac25(a_9-a_{10})\big],\\
+M_{hs}&=\sqrt6\big[\tfrac8{15}(a_6+a_7)+\tfrac2{15}a_8+\tfrac13a_9+\tfrac23a_{10}+\tfrac15a_{11}\big],\\
+M_{hr}&=\tfrac{\sqrt{30}}{15}(2a_6-a_7-a_8+2a_9-2a_{10}).
+\end{aligned}\label{eq:cub-lazar}
+\end{equation}
+The map from $(a_1,\dots,a_{11})$ to the eleven block moduli is invertible; its inverse,
+and the conditions of section~\ref{sec:compliance} in terms of the $a_i$, are given there.
+The atomistic data of section~\ref{sec:compliance} enter through~\eqref{eq:cub-lazar}.
+
+\begin{table}[pos=tbp]
+\caption{Structure of the isotropic, cubic and hexagonal algebras on the strain-gradient
+space $\Vsg$. For each irreducible representation $p$ of the rotation group ($\SOrth$,
+$O$ or $D_6$): its dimension $\dimirr{p}$; the isotropic components that contain its
+copies, in the order of the blocks; its multiplicity $\mult{p}$; and its contributions to
+the dimension of the algebra ($\mult{p}^2$) and to the number of constants of the tensors
+with major symmetry ($\tfrac12\mult{p}(\mult{p}+1)$). Hexagonal labels refer to $\bm e_1$
+along an $a$ axis (section~\ref{sec:hexagonal}).}\label{tab:algebras}
+\centering\small
+\input{algebra_structure}
+\end{table}
